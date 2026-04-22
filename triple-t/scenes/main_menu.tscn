@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bme7ge5cxqq8b" path="res://scenes/main_menu.gd" id="1_wu84c"]
 [ext_resource type="Texture2D" uid="uid://bwdqjfl57ce73" path="res://assets/parallex/Forest&&Moon Pixel Art/Preview/BackGround.png" id="2_bqqt6"]
 [ext_resource type="Texture2D" uid="uid://dxs2h7b8o8ylr" path="res://assets/sprites/Untitled.png" id="3_wu84c"]
-[ext_resource type="AudioStream" uid="uid://bnlgvbgbek400" path="res://assets/music/tungtung.mp3" id="5_8ln24"]
+[ext_resource type="AudioStream" uid="uid://ba56hss541ung" path="res://assets/music/tuntungtungsahur.mp3" id="5_tbmy8"]
 [ext_resource type="Script" uid="uid://dtjkk6gt0v75j" path="res://scenes/audio_control.gd" id="6_rtw2f"]
 [ext_resource type="Script" uid="uid://cmweybsrkqawy" path="res://scenes/check_button.gd" id="7_oa1go"]
 [ext_resource type="Texture2D" uid="uid://27pj4dlwbrvm" path="res://assets/sprites/htp.png" id="8_tbmy8"]
@@ -75,7 +75,6 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_8ln24")
 
 [node name="MainButtons" type="VBoxContainer" parent="." unique_id=935572325]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -177,11 +176,12 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=186334774]
-stream = ExtResource("5_8ln24")
+stream = ExtResource("5_tbmy8")
 autoplay = true
 bus = &"Music"
 
 [node name="Option" type="Panel" parent="." unique_id=1836026391]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.26000002
