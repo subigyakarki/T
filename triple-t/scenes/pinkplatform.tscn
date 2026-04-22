@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://thj1l6mjou0r"]
+
+[ext_resource type="Texture2D" uid="uid://ql3vwgp7s7gy" path="res://assets/sprites/pinkplatform.png" id="1_2r07y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_do83m"]
+size = Vector2(30, 8)
+
+[node name="pinkplatform" type="AnimatableBody2D" unique_id=1345134294]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1754853133]
+position = Vector2(0.99999994, 0)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_2r07y")
+region_enabled = true
+region_rect = Rect2(412, 246, 319, 88)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=858043491]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_do83m")

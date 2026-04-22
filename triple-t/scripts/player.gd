@@ -30,6 +30,8 @@ func _physics_process(delta: float) -> void:
 	elif  direction > 0:
 		anim.flip_h = false
 		
+
+	
 		
 		
 	

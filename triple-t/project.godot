@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="TripleT"
-run/main_scene="uid://ilwh8ngyrxmw"
+run/main_scene="uid://bmox4o0icejis"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
