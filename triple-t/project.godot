@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="TripleT"
-run/main_scene="uid://ilwh8ngyrxmw"
+run/main_scene="uid://bgbrvedgpf855"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -22,6 +22,10 @@ buses/default_bus_layout="uid://1gqlopxl030w"
 [autoload]
 
 Music="*uid://bh3ll36y41t24"
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [dotnet]
 
