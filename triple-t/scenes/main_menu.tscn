@@ -154,8 +154,8 @@ texture = ExtResource("2_bqqt6")
 [node name="ParallaxLayer7" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1422030483]
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer7" unique_id=736667757]
-position = Vector2(740, 479)
-scale = Vector2(0.4766955, 0.38183594)
+position = Vector2(710.53406, 449.25003)
+scale = Vector2(0.5342462, 0.43994147)
 texture = ExtResource("3_wu84c")
 
 [node name="Title" type="Label" parent="." unique_id=282073329]
@@ -165,10 +165,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -549.0
-offset_top = -148.0
-offset_right = 127.0
-offset_bottom = -59.0
+offset_left = -550.0
+offset_top = -164.0
+offset_right = 126.0
+offset_bottom = -75.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.9137255, 0.9137255, 0.54509807, 1)
@@ -269,7 +269,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="How to Play" type="Panel" parent="." unique_id=308219631]
-visible = false
 layout_mode = 0
 offset_left = 59.0
 offset_top = 230.0
