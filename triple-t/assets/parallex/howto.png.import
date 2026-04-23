@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2ujwcwiv0vt7"
-path="res://.godot/imported/BackGround_001.png-34973f666ba61ca7a41fac489756f4c0.ctex"
+uid="uid://c2ebplqi2twe4"
+path="res://.godot/imported/howto.png-0e5990b6907a02c2ed76e308e0d02d18.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/parallex/Forest&&Moon Pixel Art/PNG/Layers/BackGround_001.png"
-dest_files=["res://.godot/imported/BackGround_001.png-34973f666ba61ca7a41fac489756f4c0.ctex"]
+source_file="res://assets/parallex/howto.png"
+dest_files=["res://.godot/imported/howto.png-0e5990b6907a02c2ed76e308e0d02d18.ctex"]
 
 [params]
 
