@@ -203,4 +203,7 @@ bus = &"SFX"
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2005250873]
 libraries/ = SubResource("AnimationLibrary_wnlwo")
 
+[node name="coin" type="AudioStreamPlayer2D" parent="." unique_id=565070542]
+stream = ExtResource("3_11l1o")
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

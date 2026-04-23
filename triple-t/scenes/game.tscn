@@ -21,6 +21,14 @@
 [ext_resource type="PackedScene" uid="uid://b5hehqihe5qn1" path="res://scenes/yellowplatform.tscn" id="18_ssvqc"]
 [ext_resource type="PackedScene" uid="uid://thj1l6mjou0r" path="res://scenes/pinkplatform.tscn" id="19_264po"]
 [ext_resource type="PackedScene" uid="uid://b8voju4rplviu" path="res://scenes/finish.tscn" id="21_5newe"]
+[ext_resource type="Script" uid="uid://bblgk877nqbh3" path="res://scenes/manager.gd" id="22_37s47"]
+[ext_resource type="FontFile" uid="uid://dcadc35nx875u" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="23_bt5mj"]
+[ext_resource type="Texture2D" uid="uid://cbtjjtvao62fh" path="res://assets/sprites/heart.png" id="24_pl11u"]
+[ext_resource type="Script" uid="uid://dgdkj8u64gh6l" path="res://scenes/pause.gd" id="25_bhx41"]
+[ext_resource type="Texture2D" uid="uid://b3rakh8741gsm" path="res://assets/sprites/dead.png" id="26_bhx41"]
+[ext_resource type="Script" uid="uid://bx1lc6cjd0ehm" path="res://scenes/gameover.gd" id="26_qnb83"]
+[ext_resource type="AudioStream" uid="uid://dkiwv1jnb7dpv" path="res://assets/sounds/sad-hamster.mp3" id="28_sww3w"]
+[ext_resource type="AudioStream" uid="uid://dym0mtb17783f" path="res://assets/music/shinjis-theme-bleach-cartel-dealer.mp3" id="29_suyxu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
@@ -2423,7 +2431,29 @@ _data = {
 &"kill": SubResource("Animation_7ss2i")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qnb83"]
+bg_color = Color(0.18179765, 0.18179768, 0.18179756, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sww3w"]
+bg_color = Color(0.1148968, 0.11489681, 0.1148968, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_suyxu"]
+bg_color = Color(0.14586785, 0.14586785, 0.14586785, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
 [node name="game" type="Node2D" unique_id=105065609]
+position = Vector2(1533, 1203)
 script = ExtResource("1_5newe")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1301984911]
@@ -2432,7 +2462,7 @@ tile_map_data = PackedByteArray("AACh/7f/AAAAAAEAAGADALb/AAAAAAEAAGADALf/AAAAAAE
 tile_set = SubResource("TileSet_lbhrr")
 metadata/_edit_group_ = true
 
-[node name="player" parent="." unique_id=1205359493 instance=ExtResource("1_uwrxv")]
+[node name="player" parent="." unique_id=1205359493 groups=["player"] instance=ExtResource("1_uwrxv")]
 position = Vector2(-1417, -1082)
 collision_layer = 2
 
@@ -2444,6 +2474,7 @@ script = ExtResource("3_rysoc")
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1351790807]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=634413167]
+position = Vector2(1533, 1203)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=816515185]
 position = Vector2(6.999939, 7.5)
@@ -2451,6 +2482,7 @@ scale = Vector2(8.177777, 12.705556)
 texture = ExtResource("3_0tnpc")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1151895578]
+position = Vector2(1533, 1203)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2" unique_id=1872943618]
 position = Vector2(-85.00002, -201.25002)
@@ -2458,6 +2490,7 @@ scale = Vector2(7.7555556, 8.025001)
 texture = ExtResource("4_vtaks")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1809457952]
+position = Vector2(1533, 1203)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3" unique_id=626201405]
 position = Vector2(-0.00018692017, -21.500061)
@@ -2465,6 +2498,7 @@ scale = Vector2(8.31111, 12.849999)
 texture = ExtResource("5_kvpfn")
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1750643268]
+position = Vector2(1533, 1203)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4" unique_id=520023417]
 position = Vector2(11.99983, 11.999897)
@@ -2472,6 +2506,7 @@ scale = Vector2(8.333334, 13.222222)
 texture = ExtResource("6_dinhu")
 
 [node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground" unique_id=785673379]
+position = Vector2(1533, 1203)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5" unique_id=2032900088]
 position = Vector2(6.0000486, 8.000043)
@@ -2479,6 +2514,7 @@ scale = Vector2(8.366667, 13.222221)
 texture = ExtResource("7_kvuet")
 
 [node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground" unique_id=2121546616]
+position = Vector2(1533, 1203)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer6" unique_id=298025547]
 position = Vector2(-6, -1.999939)
@@ -2486,6 +2522,7 @@ scale = Vector2(8.3, 13.11111)
 texture = ExtResource("8_trtic")
 
 [node name="ParallaxLayer7" type="ParallaxLayer" parent="ParallaxBackground" unique_id=386731363]
+position = Vector2(1533, 1203)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer7" unique_id=507643854]
 position = Vector2(-4.999998, -15)
@@ -2498,295 +2535,295 @@ scale = Vector2(8.249999, 13.074999)
 texture = ExtResource("9_ir15t")
 
 [node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer7" unique_id=143823808]
-position = Vector2(-44, -23)
+position = Vector2(-49, -23)
 scale = Vector2(8.249999, 13.074999)
 texture = ExtResource("9_ir15t")
 
 [node name="Coins" type="Node" parent="." unique_id=1233492287]
 
 [node name="Coin" parent="Coins" unique_id=126231409 instance=ExtResource("10_vtaks")]
-position = Vector2(-1236, -800)
+position = Vector2(297, 403)
 
 [node name="Coin15" parent="Coins" unique_id=222232967 instance=ExtResource("10_vtaks")]
-position = Vector2(-1089, -803)
+position = Vector2(444, 400)
 
 [node name="Coin16" parent="Coins" unique_id=1991166594 instance=ExtResource("10_vtaks")]
-position = Vector2(-967, -802)
+position = Vector2(566, 401)
 
 [node name="Coin42" parent="Coins" unique_id=2136177526 instance=ExtResource("10_vtaks")]
-position = Vector2(-728, -798)
+position = Vector2(805, 405)
 
 [node name="Coin2" parent="Coins" unique_id=1576535209 instance=ExtResource("10_vtaks")]
-position = Vector2(-1402, -410)
+position = Vector2(131, 793)
 
 [node name="Coin3" parent="Coins" unique_id=1996349006 instance=ExtResource("10_vtaks")]
-position = Vector2(-1249, -405)
+position = Vector2(284, 798)
 
 [node name="Coin47" parent="Coins" unique_id=1536133486 instance=ExtResource("10_vtaks")]
-position = Vector2(-1119, -604)
+position = Vector2(414, 599)
 
 [node name="Coin4" parent="Coins" unique_id=205339551 instance=ExtResource("10_vtaks")]
-position = Vector2(-936, -57)
+position = Vector2(597, 1146)
 
 [node name="Coin5" parent="Coins" unique_id=217418872 instance=ExtResource("10_vtaks")]
-position = Vector2(148, -508)
+position = Vector2(1681, 695)
 
 [node name="Coin48" parent="Coins" unique_id=1921665503 instance=ExtResource("10_vtaks")]
-position = Vector2(148, -508)
+position = Vector2(1681, 695)
 
 [node name="Coin6" parent="Coins" unique_id=1049636014 instance=ExtResource("10_vtaks")]
-position = Vector2(-1267, -60)
+position = Vector2(266, 1143)
 
 [node name="Coin20" parent="Coins" unique_id=26321568 instance=ExtResource("10_vtaks")]
-position = Vector2(-1088, 869)
+position = Vector2(445, 2072)
 
 [node name="Coin21" parent="Coins" unique_id=1566469336 instance=ExtResource("10_vtaks")]
-position = Vector2(-984, 806)
+position = Vector2(549, 2009)
 
 [node name="Coin22" parent="Coins" unique_id=1103254014 instance=ExtResource("10_vtaks")]
-position = Vector2(-58, 450)
+position = Vector2(1475, 1653)
 
 [node name="Coin24" parent="Coins" unique_id=1635414766 instance=ExtResource("10_vtaks")]
-position = Vector2(-1378, 1017)
+position = Vector2(155, 2220)
 
 [node name="Coin25" parent="Coins" unique_id=1169580474 instance=ExtResource("10_vtaks")]
-position = Vector2(-629, 1085)
+position = Vector2(904, 2288)
 
 [node name="Coin26" parent="Coins" unique_id=300504047 instance=ExtResource("10_vtaks")]
-position = Vector2(208, 1135)
+position = Vector2(1741, 2338)
 
 [node name="Coin27" parent="Coins" unique_id=978560156 instance=ExtResource("10_vtaks")]
-position = Vector2(217, 744)
+position = Vector2(1750, 1947)
 
 [node name="Coin28" parent="Coins" unique_id=689190220 instance=ExtResource("10_vtaks")]
-position = Vector2(83, 210)
+position = Vector2(1616, 1413)
 
 [node name="Coin29" parent="Coins" unique_id=499070777 instance=ExtResource("10_vtaks")]
-position = Vector2(550, 19)
+position = Vector2(2083, 1222)
 
 [node name="Coin30" parent="Coins" unique_id=2808856 instance=ExtResource("10_vtaks")]
-position = Vector2(581, -389)
+position = Vector2(2114, 814)
 
 [node name="Coin31" parent="Coins" unique_id=2030583577 instance=ExtResource("10_vtaks")]
-position = Vector2(1039, -354)
+position = Vector2(2572, 849)
 
 [node name="Coin33" parent="Coins" unique_id=1005182052 instance=ExtResource("10_vtaks")]
-position = Vector2(-36, -811)
+position = Vector2(1497, 392)
 
 [node name="Coin34" parent="Coins" unique_id=1836622751 instance=ExtResource("10_vtaks")]
-position = Vector2(356, -1054)
+position = Vector2(1889, 149)
 
 [node name="Coin35" parent="Coins" unique_id=14864855 instance=ExtResource("10_vtaks")]
-position = Vector2(846, -811)
+position = Vector2(2379, 392)
 
 [node name="Coin36" parent="Coins" unique_id=734239358 instance=ExtResource("10_vtaks")]
-position = Vector2(1278, -818)
+position = Vector2(2811, 385)
 
 [node name="Coin37" parent="Coins" unique_id=419828155 instance=ExtResource("10_vtaks")]
-position = Vector2(1009, -1093)
+position = Vector2(2542, 110)
 
 [node name="Coin62" parent="Coins" unique_id=1926496506 instance=ExtResource("10_vtaks")]
-position = Vector2(1080, -1076)
+position = Vector2(2613, 127)
 
 [node name="Coin63" parent="Coins" unique_id=1533975984 instance=ExtResource("10_vtaks")]
-position = Vector2(1127, -1027)
+position = Vector2(2660, 176)
 
 [node name="Coin38" parent="Coins" unique_id=1115429156 instance=ExtResource("10_vtaks")]
-position = Vector2(912, 442)
+position = Vector2(2445, 1645)
 
 [node name="Coin59" parent="Coins" unique_id=2064853932 instance=ExtResource("10_vtaks")]
-position = Vector2(1104, 486)
+position = Vector2(2637, 1689)
 
 [node name="Coin60" parent="Coins" unique_id=293930280 instance=ExtResource("10_vtaks")]
-position = Vector2(1139, 359)
+position = Vector2(2672, 1562)
 
 [node name="Coin61" parent="Coins" unique_id=1869300387 instance=ExtResource("10_vtaks")]
-position = Vector2(1255, 245)
+position = Vector2(2788, 1448)
 
 [node name="Coin39" parent="Coins" unique_id=809575236 instance=ExtResource("10_vtaks")]
-position = Vector2(894, 992)
+position = Vector2(2427, 2195)
 
 [node name="Coin40" parent="Coins" unique_id=236113600 instance=ExtResource("10_vtaks")]
-position = Vector2(822, 1126)
+position = Vector2(2355, 2329)
 
 [node name="Coin41" parent="Coins" unique_id=418547676 instance=ExtResource("10_vtaks")]
-position = Vector2(494, 1130)
+position = Vector2(2027, 2333)
 
 [node name="Coin32" parent="Coins" unique_id=1303134113 instance=ExtResource("10_vtaks")]
-position = Vector2(661, -585)
+position = Vector2(2194, 618)
 
 [node name="Coin23" parent="Coins" unique_id=1690309515 instance=ExtResource("10_vtaks")]
-position = Vector2(-165, 600)
+position = Vector2(1368, 1803)
 
 [node name="Coin7" parent="Coins" unique_id=1586708202 instance=ExtResource("10_vtaks")]
-position = Vector2(-241, -455)
+position = Vector2(1292, 748)
 
 [node name="Coin64" parent="Coins" unique_id=1859428624 instance=ExtResource("10_vtaks")]
-position = Vector2(27, -354)
+position = Vector2(1560, 849)
 
 [node name="Coin8" parent="Coins" unique_id=787980348 instance=ExtResource("10_vtaks")]
-position = Vector2(-579, -43)
+position = Vector2(954, 1160)
 
 [node name="Coin9" parent="Coins" unique_id=994491497 instance=ExtResource("10_vtaks")]
-position = Vector2(-1074, -408)
+position = Vector2(459, 795)
 
 [node name="Coin44" parent="Coins" unique_id=1170097343 instance=ExtResource("10_vtaks")]
-position = Vector2(-435, -369)
+position = Vector2(1098, 834)
 
 [node name="Coin45" parent="Coins" unique_id=1618346516 instance=ExtResource("10_vtaks")]
-position = Vector2(-434, -218)
+position = Vector2(1099, 985)
 
 [node name="Coin46" parent="Coins" unique_id=61433616 instance=ExtResource("10_vtaks")]
-position = Vector2(-325, -511)
+position = Vector2(1208, 692)
 
 [node name="Coin43" parent="Coins" unique_id=1428067841 instance=ExtResource("10_vtaks")]
-position = Vector2(-886, -1013)
+position = Vector2(647, 190)
 
 [node name="Coin17" parent="Coins" unique_id=1826738267 instance=ExtResource("10_vtaks")]
-position = Vector2(-1332, -233)
+position = Vector2(201, 970)
 
 [node name="Coin18" parent="Coins" unique_id=1225203383 instance=ExtResource("10_vtaks")]
-position = Vector2(-1107, -235)
+position = Vector2(426, 968)
 
 [node name="Coin19" parent="Coins" unique_id=1106177108 instance=ExtResource("10_vtaks")]
-position = Vector2(-896, -258)
+position = Vector2(637, 945)
 
 [node name="Coin10" parent="Coins" unique_id=851831488 instance=ExtResource("10_vtaks")]
-position = Vector2(-1395, -849)
+position = Vector2(138, 354)
 
 [node name="Coin11" parent="Coins" unique_id=574510235 instance=ExtResource("10_vtaks")]
-position = Vector2(-1353, -850)
+position = Vector2(180, 353)
 
 [node name="Coin12" parent="Coins" unique_id=1895396566 instance=ExtResource("10_vtaks")]
-position = Vector2(-1309, -850)
+position = Vector2(224, 353)
 
 [node name="Coin13" parent="Coins" unique_id=517322929 instance=ExtResource("10_vtaks")]
-position = Vector2(-1446, -915)
+position = Vector2(87, 288)
 
 [node name="Coin14" parent="Coins" unique_id=1632307214 instance=ExtResource("10_vtaks")]
-position = Vector2(-1405, -915)
+position = Vector2(128, 288)
 
 [node name="Coin49" parent="Coins" unique_id=1111263229 instance=ExtResource("10_vtaks")]
-position = Vector2(127, 599)
+position = Vector2(1660, 1802)
 
 [node name="Coin50" parent="Coins" unique_id=596908476 instance=ExtResource("10_vtaks")]
-position = Vector2(43, 531)
+position = Vector2(1576, 1734)
 
 [node name="Coin51" parent="Coins" unique_id=1857378923 instance=ExtResource("10_vtaks")]
-position = Vector2(122, 483)
+position = Vector2(1655, 1686)
 
 [node name="Coin52" parent="Coins" unique_id=1599993721 instance=ExtResource("10_vtaks")]
-position = Vector2(206, 436)
+position = Vector2(1739, 1639)
 
 [node name="Coin53" parent="Coins" unique_id=1618493355 instance=ExtResource("10_vtaks")]
-position = Vector2(445, 298)
+position = Vector2(1978, 1501)
 
 [node name="Coin54" parent="Coins" unique_id=1531920292 instance=ExtResource("10_vtaks")]
-position = Vector2(583, -551)
+position = Vector2(2116, 652)
 
 [node name="Coin55" parent="Coins" unique_id=801810523 instance=ExtResource("10_vtaks")]
-position = Vector2(671, -604)
+position = Vector2(2204, 599)
 
 [node name="Coin56" parent="Coins" unique_id=1752752543 instance=ExtResource("10_vtaks")]
-position = Vector2(755, -567)
+position = Vector2(2288, 636)
 
 [node name="Coin57" parent="Coins" unique_id=106897523 instance=ExtResource("10_vtaks")]
-position = Vector2(584, -682)
+position = Vector2(2117, 521)
 
 [node name="Coin58" parent="Coins" unique_id=1376739814 instance=ExtResource("10_vtaks")]
-position = Vector2(877, -604)
+position = Vector2(2410, 599)
 
 [node name="Coin65" parent="Coins" unique_id=1144283288 instance=ExtResource("10_vtaks")]
-position = Vector2(1428, -201)
+position = Vector2(2961, 1002)
 
 [node name="Coin66" parent="Coins" unique_id=249191037 instance=ExtResource("10_vtaks")]
-position = Vector2(1318, -39)
+position = Vector2(2851, 1164)
 
 [node name="Coin67" parent="Coins" unique_id=536575875 instance=ExtResource("10_vtaks")]
-position = Vector2(1432, 71)
+position = Vector2(2965, 1274)
 
 [node name="Coin68" parent="Coins" unique_id=1894406222 instance=ExtResource("10_vtaks")]
-position = Vector2(1123, 218)
+position = Vector2(2656, 1421)
 
 [node name="Coin69" parent="Coins" unique_id=1758442733 instance=ExtResource("10_vtaks")]
-position = Vector2(-207, -98)
+position = Vector2(1326, 1105)
 
 [node name="Coin70" parent="Coins" unique_id=495186645 instance=ExtResource("10_vtaks")]
-position = Vector2(-638, -866)
+position = Vector2(895, 337)
 
 [node name="Coin71" parent="Coins" unique_id=1716243261 instance=ExtResource("10_vtaks")]
-position = Vector2(-503, -798)
+position = Vector2(1030, 405)
 
 [node name="Coin72" parent="Coins" unique_id=1639154853 instance=ExtResource("10_vtaks")]
-position = Vector2(-634, -688)
+position = Vector2(899, 515)
 
 [node name="Coin73" parent="Coins" unique_id=1514174048 instance=ExtResource("10_vtaks")]
-position = Vector2(-450, -1043)
+position = Vector2(1083, 160)
 
 [node name="Coin74" parent="Coins" unique_id=1087834958 instance=ExtResource("10_vtaks")]
-position = Vector2(-316, -1042)
+position = Vector2(1217, 161)
 
 [node name="Coin75" parent="Coins" unique_id=974013369 instance=ExtResource("10_vtaks")]
-position = Vector2(-190, -1040)
+position = Vector2(1343, 163)
 
 [node name="Coin76" parent="Coins" unique_id=1232401122 instance=ExtResource("10_vtaks")]
-position = Vector2(1141, 707)
+position = Vector2(2674, 1910)
 
 [node name="Coin77" parent="Coins" unique_id=1031352671 instance=ExtResource("10_vtaks")]
-position = Vector2(1064, 773)
+position = Vector2(2597, 1976)
 
 [node name="Coin78" parent="Coins" unique_id=155315675 instance=ExtResource("10_vtaks")]
-position = Vector2(1427, 898)
+position = Vector2(2960, 2101)
 
 [node name="Coin79" parent="Coins" unique_id=383714162 instance=ExtResource("10_vtaks")]
-position = Vector2(1071, 874)
+position = Vector2(2604, 2077)
 
 [node name="Coin80" parent="Coins" unique_id=1355615487 instance=ExtResource("10_vtaks")]
-position = Vector2(-888, 611)
+position = Vector2(645, 1814)
 
 [node name="Coin81" parent="Coins" unique_id=1273090214 instance=ExtResource("10_vtaks")]
-position = Vector2(-754, 610)
+position = Vector2(779, 1813)
 
 [node name="Coin82" parent="Coins" unique_id=380345990 instance=ExtResource("10_vtaks")]
-position = Vector2(-642, 608)
+position = Vector2(891, 1811)
 
 [node name="Coin83" parent="Coins" unique_id=63085520 instance=ExtResource("10_vtaks")]
-position = Vector2(-504, 606)
+position = Vector2(1029, 1809)
 
 [node name="Coin84" parent="Coins" unique_id=1262858327 instance=ExtResource("10_vtaks")]
-position = Vector2(-377, 603)
+position = Vector2(1156, 1806)
 
 [node name="Coin85" parent="Coins" unique_id=914149850 instance=ExtResource("10_vtaks")]
-position = Vector2(-267, 603)
+position = Vector2(1266, 1806)
 
 [node name="Platforms" type="Node" parent="." unique_id=1666346518]
 
 [node name="Platform" parent="Platforms" unique_id=491382603 instance=ExtResource("11_kvpfn")]
-position = Vector2(-1456, -570)
+position = Vector2(77, 633)
 
 [node name="Platform2" parent="Platforms" unique_id=1766374572 instance=ExtResource("11_kvpfn")]
-position = Vector2(-1327, -651)
+position = Vector2(206, 552)
 
 [node name="Platform3" parent="Platforms" unique_id=1634205821 instance=ExtResource("11_kvpfn")]
-position = Vector2(-1296, -651)
+position = Vector2(237, 552)
 
 [node name="Platform4" parent="Platforms" unique_id=1486212718 instance=ExtResource("11_kvpfn")]
-position = Vector2(-1428, -729)
+position = Vector2(105, 474)
 
 [node name="Platform5" parent="Platforms" unique_id=1918472657 instance=ExtResource("11_kvpfn")]
-position = Vector2(-1458, -729)
+position = Vector2(75, 474)
 
 [node name="Platform6" parent="Platforms" unique_id=1181196019 instance=ExtResource("11_kvpfn")]
-position = Vector2(-1297, -764)
+position = Vector2(236, 439)
 
 [node name="Platform7" parent="Platforms" unique_id=928622019 instance=ExtResource("11_kvpfn")]
-position = Vector2(-1423, -570)
+position = Vector2(110, 633)
 
 [node name="Platform8" parent="Platforms" unique_id=2000796882 instance=ExtResource("11_kvpfn")]
-position = Vector2(-1311, -494)
+position = Vector2(222, 709)
 
 [node name="Platform29" parent="Platforms" unique_id=435193534 instance=ExtResource("11_kvpfn")]
-position = Vector2(-1339, -494)
+position = Vector2(194, 709)
 
 [node name="Platform9" parent="Platforms" unique_id=138336580 instance=ExtResource("11_kvpfn")]
 position = Vector2(-433, -571)
@@ -2796,7 +2833,7 @@ libraries/ = SubResource("AnimationLibrary_kvuet")
 autoplay = &"move"
 
 [node name="Platform10" parent="Platforms" unique_id=1303988699 instance=ExtResource("11_kvpfn")]
-position = Vector2(-325, -488)
+position = Vector2(1208, 715)
 
 [node name="Platform11" parent="Platforms" unique_id=725033261 instance=ExtResource("11_kvpfn")]
 position = Vector2(-427, -411)
@@ -2806,7 +2843,7 @@ libraries/ = SubResource("AnimationLibrary_ca42v")
 autoplay = &"move"
 
 [node name="Platform12" parent="Platforms" unique_id=1910315186 instance=ExtResource("11_kvpfn")]
-position = Vector2(-432, -344)
+position = Vector2(1101, 859)
 
 [node name="Platform13" parent="Platforms" unique_id=271073323 instance=ExtResource("11_kvpfn")]
 position = Vector2(-442, -270)
@@ -2816,7 +2853,7 @@ libraries/ = SubResource("AnimationLibrary_264po")
 autoplay = &"move"
 
 [node name="Platform14" parent="Platforms" unique_id=2069548355 instance=ExtResource("11_kvpfn")]
-position = Vector2(-433, -195)
+position = Vector2(1100, 1008)
 
 [node name="Platform15" parent="Platforms" unique_id=123210047 instance=ExtResource("11_kvpfn")]
 position = Vector2(-379, -153)
@@ -2867,22 +2904,22 @@ position = Vector2(-622, 807)
 libraries/ = SubResource("AnimationLibrary_veukt")
 
 [node name="Platform23" parent="Platforms" unique_id=1084113604 instance=ExtResource("13_kvuet")]
-position = Vector2(47, -810)
+position = Vector2(1580, 393)
 
 [node name="Platform24" parent="Platforms" unique_id=1302813745 instance=ExtResource("13_kvuet")]
-position = Vector2(175, -882)
+position = Vector2(1708, 321)
 
 [node name="Platform25" parent="Platforms" unique_id=746305087 instance=ExtResource("13_kvuet")]
-position = Vector2(46, -990)
+position = Vector2(1579, 213)
 
 [node name="Platform26" parent="Platforms" unique_id=329133865 instance=ExtResource("13_kvuet")]
-position = Vector2(78, -990)
+position = Vector2(1611, 213)
 
 [node name="Platform27" parent="Platforms" unique_id=59565632 instance=ExtResource("13_kvuet")]
-position = Vector2(143, -882)
+position = Vector2(1676, 321)
 
 [node name="Platform28" parent="Platforms" unique_id=566232167 instance=ExtResource("13_kvuet")]
-position = Vector2(80, -810)
+position = Vector2(1613, 393)
 
 [node name="Platform30" parent="Platforms" unique_id=1763906803 instance=ExtResource("13_kvuet")]
 position = Vector2(52, -670)
@@ -2892,7 +2929,7 @@ libraries/ = SubResource("AnimationLibrary_xjcjm")
 autoplay = &"move"
 
 [node name="Platform31" parent="Platforms" unique_id=680641472 instance=ExtResource("11_kvpfn")]
-position = Vector2(-1329, -764)
+position = Vector2(204, 439)
 
 [node name="Platform32" parent="Platforms" unique_id=1125428475 instance=ExtResource("13_kvuet")]
 position = Vector2(1185, -198)
@@ -2951,28 +2988,28 @@ libraries/ = SubResource("AnimationLibrary_rekj2")
 autoplay = &"move "
 
 [node name="yellowplatform3" parent="Platforms" unique_id=1521134619 instance=ExtResource("18_ssvqc")]
-position = Vector2(-425, 248)
+position = Vector2(1108, 1451)
 
 [node name="yellowplatform4" parent="Platforms" unique_id=2082460957 instance=ExtResource("18_ssvqc")]
-position = Vector2(-395, 248)
+position = Vector2(1138, 1451)
 
 [node name="yellowplatform5" parent="Platforms" unique_id=427621613 instance=ExtResource("18_ssvqc")]
-position = Vector2(-497, 210)
+position = Vector2(1036, 1413)
 
 [node name="yellowplatform6" parent="Platforms" unique_id=1327334820 instance=ExtResource("18_ssvqc")]
-position = Vector2(-467, 210)
+position = Vector2(1066, 1413)
 
 [node name="yellowplatform7" parent="Platforms" unique_id=553238328 instance=ExtResource("18_ssvqc")]
-position = Vector2(-1318, 162)
+position = Vector2(215, 1365)
 
 [node name="yellowplatform8" parent="Platforms" unique_id=779645193 instance=ExtResource("18_ssvqc")]
-position = Vector2(-1288, 163)
+position = Vector2(245, 1366)
 
 [node name="yellowplatform9" parent="Platforms" unique_id=917766144 instance=ExtResource("18_ssvqc")]
-position = Vector2(-1380, 116)
+position = Vector2(153, 1319)
 
 [node name="yellowplatform10" parent="Platforms" unique_id=1346166128 instance=ExtResource("18_ssvqc")]
-position = Vector2(-1350, 117)
+position = Vector2(183, 1320)
 
 [node name="Platform16" parent="Platforms" unique_id=1364098975 instance=ExtResource("11_kvpfn")]
 position = Vector2(-845, -571)
@@ -2991,10 +3028,10 @@ autoplay = &"move"
 [node name="Enemies" type="Node" parent="." unique_id=1938074654]
 
 [node name="Enemy" parent="Enemies" unique_id=1778880582 instance=ExtResource("12_dinhu")]
-position = Vector2(-1022, -599)
+position = Vector2(511, 604)
 
 [node name="Enemy2" parent="Enemies" unique_id=1217073659 instance=ExtResource("12_dinhu")]
-position = Vector2(-582, -349)
+position = Vector2(951, 854)
 
 [node name="Enemy3" parent="Enemies" unique_id=565982783 instance=ExtResource("12_dinhu")]
 position = Vector2(269, 102)
@@ -3252,3 +3289,223 @@ autoplay = &"kill"
 
 [node name="finish" parent="." unique_id=1630556567 instance=ExtResource("21_5newe")]
 position = Vector2(545, -769)
+
+[node name="manager" type="Node" parent="." unique_id=91944067 node_paths=PackedStringArray("hearts") groups=["manager"]]
+unique_name_in_owner = true
+script = ExtResource("22_37s47")
+hearts = [NodePath("../UI/Hearts/HBoxContainer/heart"), NodePath("../UI/Hearts/HBoxContainer/heart2"), NodePath("../UI/Hearts/HBoxContainer/heart3")]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=932824109]
+
+[node name="Points" type="Panel" parent="UI" unique_id=1277221994]
+offset_left = 21.0
+offset_top = 21.0
+offset_right = 97.0
+offset_bottom = 44.0
+
+[node name="point" type="Label" parent="UI/Points" unique_id=519833048]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("23_bt5mj")
+theme_override_font_sizes/font_size = 8
+text = "POINTS : 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Hearts" type="Panel" parent="UI" unique_id=621804829]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -109.0
+offset_top = 23.0
+offset_right = -33.0
+offset_bottom = 46.0
+grow_horizontal = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Hearts" unique_id=1166522882]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="heart" type="TextureRect" parent="UI/Hearts/HBoxContainer" unique_id=1737268287]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("24_pl11u")
+expand_mode = 2
+
+[node name="heart2" type="TextureRect" parent="UI/Hearts/HBoxContainer" unique_id=217039371]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("24_pl11u")
+expand_mode = 2
+
+[node name="heart3" type="TextureRect" parent="UI/Hearts/HBoxContainer" unique_id=799838001]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("24_pl11u")
+expand_mode = 2
+
+[node name="Pause" type="Node" parent="UI" unique_id=1306772908]
+script = ExtResource("25_bhx41")
+
+[node name="pausePanel" type="Panel" parent="UI/Pause" unique_id=718640352]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -7.0
+offset_right = 5.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="UI/Pause/pausePanel" unique_id=1625181651]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -127.5
+offset_top = -25.0
+offset_right = 127.5
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("23_bt5mj")
+theme_override_font_sizes/font_size = 24
+text = "Game Paused"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Pause/pausePanel/Label" unique_id=1629177338]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.522
+anchor_top = 2.45
+anchor_right = 0.522
+anchor_bottom = 2.45
+offset_left = -156.10999
+offset_top = -47.500008
+offset_right = 134.89
+offset_bottom = 71.5
+theme_override_constants/separation = 19
+alignment = 1
+
+[node name="resume" type="Button" parent="UI/Pause/pausePanel/Label/VBoxContainer" unique_id=2083424080]
+process_mode = 3
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("23_bt5mj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qnb83")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sww3w")
+theme_override_styles/hover = SubResource("StyleBoxFlat_suyxu")
+text = "Resume
+"
+
+[node name="goBack" type="Button" parent="UI/Pause/pausePanel/Label/VBoxContainer" unique_id=318038917]
+process_mode = 3
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("23_bt5mj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qnb83")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sww3w")
+theme_override_styles/hover = SubResource("StyleBoxFlat_suyxu")
+text = "Go to Main Menu
+"
+
+[node name="Gameover" type="Panel" parent="UI/Pause" unique_id=1666871902]
+unique_name_in_owner = true
+visible = false
+offset_right = 1150.0
+offset_bottom = 643.0
+script = ExtResource("26_qnb83")
+
+[node name="TextureRect" type="TextureRect" parent="UI/Pause/Gameover" unique_id=1057595398]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.017
+offset_left = -25.0
+offset_top = -161.0
+offset_right = 1171.45
+offset_bottom = 718.0
+texture = ExtResource("26_bhx41")
+
+[node name="Label" type="Label" parent="UI/Pause/Gameover" unique_id=1871603520]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -127.5
+offset_top = -25.0
+offset_right = 127.5
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("23_bt5mj")
+theme_override_font_sizes/font_size = 24
+text = "You Failed !"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Pause/Gameover/Label" unique_id=701017986]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.522
+anchor_top = 2.45
+anchor_right = 0.522
+anchor_bottom = 2.45
+offset_left = -133.11
+offset_top = -49.5
+offset_right = 157.89
+offset_bottom = 69.5
+theme_override_constants/separation = 19
+alignment = 1
+
+[node name="tryagain" type="Button" parent="UI/Pause/Gameover/Label/VBoxContainer" unique_id=1139584124]
+process_mode = 3
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("23_bt5mj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qnb83")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sww3w")
+theme_override_styles/hover = SubResource("StyleBoxFlat_suyxu")
+text = "Try Again
+"
+
+[node name="exit" type="Button" parent="UI/Pause/Gameover/Label/VBoxContainer" unique_id=706540639]
+process_mode = 3
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("23_bt5mj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qnb83")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sww3w")
+theme_override_styles/hover = SubResource("StyleBoxFlat_suyxu")
+text = "Exit
+
+"
+
+[node name="sad" type="AudioStreamPlayer2D" parent="UI/Pause/Gameover" unique_id=34558538]
+stream = ExtResource("28_sww3w")
+
+[node name="BGMusic" type="AudioStreamPlayer2D" parent="." unique_id=1932351707]
+stream = ExtResource("29_suyxu")
+autoplay = true
+parameters/looping = true
+
+[connection signal="pressed" from="UI/Pause/pausePanel/Label/VBoxContainer/resume" to="UI/Pause" method="_on_resume_pressed"]
+[connection signal="pressed" from="UI/Pause/pausePanel/Label/VBoxContainer/goBack" to="UI/Pause" method="_on_go_back_pressed"]
+[connection signal="pressed" from="UI/Pause/Gameover/Label/VBoxContainer/tryagain" to="UI/Pause/Gameover" method="_on_tryagain_pressed"]
+[connection signal="pressed" from="UI/Pause/Gameover/Label/VBoxContainer/exit" to="UI/Pause/Gameover" method="_on_exit_pressed"]
