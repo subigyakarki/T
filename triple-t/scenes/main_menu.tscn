@@ -38,6 +38,15 @@ corner_radius_bottom_left = 16
 shadow_size = 5
 shadow_offset = Vector2(0, 4)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbmy8"]
+bg_color = Color(0.19414234, 0.20690423, 0.050840773, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 4)
+
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_8ln24"]
 color = Color(0.8745098, 0.9137255, 0.5411765, 1)
 thickness = 8
@@ -59,7 +68,6 @@ grow_vertical = 2
 script = ExtResource("1_wu84c")
 
 [node name="mainPanel" type="Panel" parent="." unique_id=1120178109]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.70100003
@@ -130,7 +138,7 @@ theme_override_colors/font_color = Color(0.16633493, 0.26085708, 0.07544512, 1)
 theme_override_fonts/font = ExtResource("1_jk1qb")
 theme_override_font_sizes/font_size = 22
 theme_override_styles/normal = SubResource("StyleBoxFlat_3d1i7")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_bqqt6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tbmy8")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wu84c")
 text = "Exit"
 
@@ -261,6 +269,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="How to Play" type="Panel" parent="." unique_id=308219631]
+visible = false
 layout_mode = 0
 offset_left = 59.0
 offset_top = 230.0

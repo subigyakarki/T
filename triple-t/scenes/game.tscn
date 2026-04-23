@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://bmox4o0icejis"]
 
+[ext_resource type="Script" uid="uid://c7qbofefj2pg1" path="res://scenes/game.gd" id="1_5newe"]
 [ext_resource type="PackedScene" uid="uid://c8lbw8glunnw" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://4wnyq8vx58gb" path="res://assets/sprites/world_tileset.png" id="2_yqjtg"]
 [ext_resource type="Texture2D" uid="uid://d28trao3htslk" path="res://assets/parallex/Stone&Moon Pixel Art/Layers/BackGround_007.png" id="3_0tnpc"]
@@ -19,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://bkuu6lrb0v5hd" path="res://scenes/yellowenemy.tscn" id="16_ssvqc"]
 [ext_resource type="PackedScene" uid="uid://b5hehqihe5qn1" path="res://scenes/yellowplatform.tscn" id="18_ssvqc"]
 [ext_resource type="PackedScene" uid="uid://thj1l6mjou0r" path="res://scenes/pinkplatform.tscn" id="19_264po"]
+[ext_resource type="PackedScene" uid="uid://b8voju4rplviu" path="res://scenes/finish.tscn" id="21_5newe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
@@ -376,6 +378,571 @@ _data = {
 &"move": SubResource("Animation_5newe")
 }
 
+[sub_resource type="Animation" id="Animation_264po"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-639, -1018)]
+}
+
+[sub_resource type="Animation" id="Animation_37s47"]
+resource_name = "move"
+length = 3.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-639, -1018), Vector2(-497, -1020)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bt5mj"]
+_data = {
+&"RESET": SubResource("Animation_264po"),
+&"move": SubResource("Animation_37s47")
+}
+
+[sub_resource type="Animation" id="Animation_sww3w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(543, 630)]
+}
+
+[sub_resource type="Animation" id="Animation_suyxu"]
+resource_name = "moce"
+length = 3.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(543, 630), Vector2(710, 630)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sgl2t"]
+_data = {
+&"RESET": SubResource("Animation_sww3w"),
+&"moce": SubResource("Animation_suyxu")
+}
+
+[sub_resource type="Animation" id="Animation_weeiq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(577, -940)]
+}
+
+[sub_resource type="Animation" id="Animation_o8oq8"]
+resource_name = "move "
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(577, -940), Vector2(734, -941)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sxt1d"]
+_data = {
+&"RESET": SubResource("Animation_weeiq"),
+&"move ": SubResource("Animation_o8oq8")
+}
+
+[sub_resource type="Animation" id="Animation_7gkqi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(736, -833)]
+}
+
+[sub_resource type="Animation" id="Animation_1yg85"]
+resource_name = "move"
+length = 1.8
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.7333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(736, -833), Vector2(575, -830)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s0g06"]
+_data = {
+&"RESET": SubResource("Animation_7gkqi"),
+&"move": SubResource("Animation_1yg85")
+}
+
+[sub_resource type="Animation" id="Animation_vgxg3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(585, -893)]
+}
+
+[sub_resource type="Animation" id="Animation_4nbsr"]
+resource_name = "move"
+length = 1.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.4333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(585, -893), Vector2(737, -891)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fkywm"]
+_data = {
+&"RESET": SubResource("Animation_vgxg3"),
+&"move": SubResource("Animation_4nbsr")
+}
+
+[sub_resource type="Animation" id="Animation_84hbc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-622, 807)]
+}
+
+[sub_resource type="Animation" id="Animation_15b3c"]
+resource_name = "move"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-622, 807), Vector2(-255, 804)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_veukt"]
+_data = {
+&"RESET": SubResource("Animation_84hbc"),
+&"move": SubResource("Animation_15b3c")
+}
+
+[sub_resource type="Animation" id="Animation_iekjf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(52, -670)]
+}
+
+[sub_resource type="Animation" id="Animation_p4npv"]
+resource_name = "move"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(52, -670), Vector2(281, -678)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xjcjm"]
+_data = {
+&"RESET": SubResource("Animation_iekjf"),
+&"move": SubResource("Animation_p4npv")
+}
+
+[sub_resource type="Animation" id="Animation_gdf8r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1185, -198)]
+}
+
+[sub_resource type="Animation" id="Animation_x8trd"]
+resource_name = "move "
+length = 1.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.4333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1185, -198), Vector2(1181, -392)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s33c4"]
+_data = {
+&"RESET": SubResource("Animation_gdf8r"),
+&"move ": SubResource("Animation_x8trd")
+}
+
+[sub_resource type="Animation" id="Animation_s33c4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-716, 1136)]
+}
+
+[sub_resource type="Animation" id="Animation_3hv4c"]
+resource_name = "move "
+length = 1.8
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.7333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-716, 1136), Vector2(-718, 981)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vniw0"]
+_data = {
+&"RESET": SubResource("Animation_s33c4"),
+&"move ": SubResource("Animation_3hv4c")
+}
+
+[sub_resource type="Animation" id="Animation_lddog"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1126, 855)]
+}
+
+[sub_resource type="Animation" id="Animation_boxkr"]
+resource_name = "move "
+length = 1.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.4333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1126, 855), Vector2(1248, 848)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_de5we"]
+_data = {
+&"RESET": SubResource("Animation_lddog"),
+&"move ": SubResource("Animation_boxkr")
+}
+
+[sub_resource type="Animation" id="Animation_vniw0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1305, 707)]
+}
+
+[sub_resource type="Animation" id="Animation_de5we"]
+resource_name = "move"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.96),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1305, 707), Vector2(1232, 711)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8tghg"]
+_data = {
+&"RESET": SubResource("Animation_vniw0"),
+&"move": SubResource("Animation_de5we")
+}
+
+[sub_resource type="Animation" id="Animation_473mq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1233, 673)]
+}
+
+[sub_resource type="Animation" id="Animation_1va0p"]
+resource_name = "move "
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1233, 673), Vector2(1307, 669)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2tvof"]
+_data = {
+&"RESET": SubResource("Animation_473mq"),
+&"move ": SubResource("Animation_1va0p")
+}
+
+[sub_resource type="Animation" id="Animation_fsry6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1304, 632)]
+}
+
+[sub_resource type="Animation" id="Animation_eky20"]
+resource_name = "move "
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1304, 632), Vector2(1233, 636)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o3ulk"]
+_data = {
+&"RESET": SubResource("Animation_fsry6"),
+&"move ": SubResource("Animation_eky20")
+}
+
+[sub_resource type="Animation" id="Animation_ghitk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1233, 584)]
+}
+
+[sub_resource type="Animation" id="Animation_rundi"]
+resource_name = "move "
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1233, 584), Vector2(1308, 581)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7kwaa"]
+_data = {
+&"RESET": SubResource("Animation_ghitk"),
+&"move ": SubResource("Animation_rundi")
+}
+
+[sub_resource type="Animation" id="Animation_jye5l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1300, 553)]
+}
+
+[sub_resource type="Animation" id="Animation_rvhxa"]
+resource_name = "move "
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.97),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1300, 553), Vector2(1230, 553)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rekj2"]
+_data = {
+&"RESET": SubResource("Animation_jye5l"),
+&"move ": SubResource("Animation_rvhxa")
+}
+
 [sub_resource type="Animation" id="Animation_kvuet"]
 length = 0.001
 tracks/0/type = "value"
@@ -414,7 +981,7 @@ _data = {
 &"move": SubResource("Animation_ca42v")
 }
 
-[sub_resource type="Animation" id="Animation_264po"]
+[sub_resource type="Animation" id="Animation_dku7i"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -426,12 +993,12 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-639, -1018)]
+"values": [Vector2(578, -768)]
 }
 
-[sub_resource type="Animation" id="Animation_37s47"]
+[sub_resource type="Animation" id="Animation_veaf0"]
 resource_name = "move"
-length = 3.0
+length = 1.5
 loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -440,16 +1007,16 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
+"times": PackedFloat32Array(0, 1.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-639, -1018), Vector2(-497, -1020)]
+"values": [Vector2(578, -768), Vector2(735, -767)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_bt5mj"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_flw08"]
 _data = {
-&"RESET": SubResource("Animation_264po"),
-&"move": SubResource("Animation_37s47")
+&"RESET": SubResource("Animation_dku7i"),
+&"move": SubResource("Animation_veaf0")
 }
 
 [sub_resource type="Animation" id="Animation_bt5mj"]
@@ -526,44 +1093,6 @@ tracks/0/keys = {
 _data = {
 &"RESET": SubResource("Animation_pl11u"),
 &"move": SubResource("Animation_bhx41")
-}
-
-[sub_resource type="Animation" id="Animation_sww3w"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(543, 630)]
-}
-
-[sub_resource type="Animation" id="Animation_suyxu"]
-resource_name = "moce"
-length = 3.0
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.9666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(543, 630), Vector2(710, 630)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_sgl2t"]
-_data = {
-&"RESET": SubResource("Animation_sww3w"),
-&"moce": SubResource("Animation_suyxu")
 }
 
 [sub_resource type="Animation" id="Animation_qnb83"]
@@ -1446,158 +1975,6 @@ _data = {
 &"move": SubResource("Animation_2gnni")
 }
 
-[sub_resource type="Animation" id="Animation_weeiq"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(577, -940)]
-}
-
-[sub_resource type="Animation" id="Animation_o8oq8"]
-resource_name = "move "
-length = 2.0
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.9666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(577, -940), Vector2(734, -941)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_sxt1d"]
-_data = {
-&"RESET": SubResource("Animation_weeiq"),
-&"move ": SubResource("Animation_o8oq8")
-}
-
-[sub_resource type="Animation" id="Animation_7gkqi"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(736, -833)]
-}
-
-[sub_resource type="Animation" id="Animation_1yg85"]
-resource_name = "move"
-length = 1.8
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.7333333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(736, -833), Vector2(575, -830)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_s0g06"]
-_data = {
-&"RESET": SubResource("Animation_7gkqi"),
-&"move": SubResource("Animation_1yg85")
-}
-
-[sub_resource type="Animation" id="Animation_vgxg3"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(585, -893)]
-}
-
-[sub_resource type="Animation" id="Animation_4nbsr"]
-resource_name = "move"
-length = 1.5
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.4333333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(585, -893), Vector2(737, -891)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_fkywm"]
-_data = {
-&"RESET": SubResource("Animation_vgxg3"),
-&"move": SubResource("Animation_4nbsr")
-}
-
-[sub_resource type="Animation" id="Animation_dku7i"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(578, -768)]
-}
-
-[sub_resource type="Animation" id="Animation_veaf0"]
-resource_name = "move"
-length = 1.5
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(578, -768), Vector2(735, -767)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_flw08"]
-_data = {
-&"RESET": SubResource("Animation_dku7i"),
-&"move": SubResource("Animation_veaf0")
-}
-
 [sub_resource type="Animation" id="Animation_fkywm"]
 length = 0.001
 tracks/0/type = "value"
@@ -1633,44 +2010,6 @@ tracks/0/keys = {
 _data = {
 &"RESET": SubResource("Animation_fkywm"),
 &"move ": SubResource("Animation_flw08")
-}
-
-[sub_resource type="Animation" id="Animation_84hbc"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-622, 807)]
-}
-
-[sub_resource type="Animation" id="Animation_15b3c"]
-resource_name = "move"
-length = 2.0
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.9666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-622, 807), Vector2(-255, 804)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_veukt"]
-_data = {
-&"RESET": SubResource("Animation_84hbc"),
-&"move": SubResource("Animation_15b3c")
 }
 
 [sub_resource type="Animation" id="Animation_nbjts"]
@@ -1822,44 +2161,6 @@ _data = {
 &"kill": SubResource("Animation_tc8uq")
 }
 
-[sub_resource type="Animation" id="Animation_iekjf"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(52, -670)]
-}
-
-[sub_resource type="Animation" id="Animation_p4npv"]
-resource_name = "move"
-length = 2.0
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(52, -670), Vector2(281, -678)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_xjcjm"]
-_data = {
-&"RESET": SubResource("Animation_iekjf"),
-&"move": SubResource("Animation_p4npv")
-}
-
 [sub_resource type="Animation" id="Animation_h5tdf"]
 length = 0.001
 tracks/0/type = "value"
@@ -1896,305 +2197,6 @@ tracks/0/keys = {
 _data = {
 &"RESET": SubResource("Animation_h5tdf"),
 &"kill": SubResource("Animation_xbifu")
-}
-
-[sub_resource type="Animation" id="Animation_gdf8r"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1185, -198)]
-}
-
-[sub_resource type="Animation" id="Animation_x8trd"]
-resource_name = "move "
-length = 1.5
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.4333333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1185, -198), Vector2(1181, -392)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_s33c4"]
-_data = {
-&"RESET": SubResource("Animation_gdf8r"),
-&"move ": SubResource("Animation_x8trd")
-}
-
-[sub_resource type="Animation" id="Animation_s33c4"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-716, 1136)]
-}
-
-[sub_resource type="Animation" id="Animation_3hv4c"]
-resource_name = "move "
-length = 1.8
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.7333333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-716, 1136), Vector2(-718, 981)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_vniw0"]
-_data = {
-&"RESET": SubResource("Animation_s33c4"),
-&"move ": SubResource("Animation_3hv4c")
-}
-
-[sub_resource type="Animation" id="Animation_lddog"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1126, 855)]
-}
-
-[sub_resource type="Animation" id="Animation_boxkr"]
-resource_name = "move "
-length = 1.5
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.4333333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1126, 855), Vector2(1248, 848)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_de5we"]
-_data = {
-&"RESET": SubResource("Animation_lddog"),
-&"move ": SubResource("Animation_boxkr")
-}
-
-[sub_resource type="Animation" id="Animation_vniw0"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1305, 707)]
-}
-
-[sub_resource type="Animation" id="Animation_de5we"]
-resource_name = "move"
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.96),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1305, 707), Vector2(1232, 711)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_8tghg"]
-_data = {
-&"RESET": SubResource("Animation_vniw0"),
-&"move": SubResource("Animation_de5we")
-}
-
-[sub_resource type="Animation" id="Animation_473mq"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1233, 673)]
-}
-
-[sub_resource type="Animation" id="Animation_1va0p"]
-resource_name = "move "
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1233, 673), Vector2(1307, 669)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_2tvof"]
-_data = {
-&"RESET": SubResource("Animation_473mq"),
-&"move ": SubResource("Animation_1va0p")
-}
-
-[sub_resource type="Animation" id="Animation_fsry6"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1304, 632)]
-}
-
-[sub_resource type="Animation" id="Animation_eky20"]
-resource_name = "move "
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.99),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1304, 632), Vector2(1233, 636)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_o3ulk"]
-_data = {
-&"RESET": SubResource("Animation_fsry6"),
-&"move ": SubResource("Animation_eky20")
-}
-
-[sub_resource type="Animation" id="Animation_ghitk"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1233, 584)]
-}
-
-[sub_resource type="Animation" id="Animation_rundi"]
-resource_name = "move "
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1233, 584), Vector2(1308, 581)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_7kwaa"]
-_data = {
-&"RESET": SubResource("Animation_ghitk"),
-&"move ": SubResource("Animation_rundi")
-}
-
-[sub_resource type="Animation" id="Animation_jye5l"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1300, 553)]
-}
-
-[sub_resource type="Animation" id="Animation_rvhxa"]
-resource_name = "move "
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.97),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1300, 553), Vector2(1230, 553)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_rekj2"]
-_data = {
-&"RESET": SubResource("Animation_jye5l"),
-&"move ": SubResource("Animation_rvhxa")
 }
 
 [sub_resource type="Animation" id="Animation_8tghg"]
@@ -2422,6 +2424,7 @@ _data = {
 }
 
 [node name="game" type="Node2D" unique_id=105065609]
+script = ExtResource("1_5newe")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1301984911]
 position = Vector2(-1, 0)
@@ -2494,755 +2497,758 @@ position = Vector2(-44, -23)
 scale = Vector2(8.249999, 13.074999)
 texture = ExtResource("9_ir15t")
 
-[node name="Coin14" parent="ParallaxBackground/ParallaxLayer7/Sprite2D2" unique_id=1998590684 instance=ExtResource("10_vtaks")]
-position = Vector2(-1405, -915)
-
 [node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer7" unique_id=143823808]
 position = Vector2(-44, -23)
 scale = Vector2(8.249999, 13.074999)
 texture = ExtResource("9_ir15t")
 
-[node name="Coin14" parent="ParallaxBackground/ParallaxLayer7/Sprite2D3" unique_id=1480971407 instance=ExtResource("10_vtaks")]
-position = Vector2(-1405, -915)
+[node name="Coins" type="Node" parent="." unique_id=1233492287]
 
-[node name="Coin" parent="." unique_id=126231409 instance=ExtResource("10_vtaks")]
+[node name="Coin" parent="Coins" unique_id=126231409 instance=ExtResource("10_vtaks")]
 position = Vector2(-1236, -800)
 
-[node name="Coin15" parent="." unique_id=222232967 instance=ExtResource("10_vtaks")]
+[node name="Coin15" parent="Coins" unique_id=222232967 instance=ExtResource("10_vtaks")]
 position = Vector2(-1089, -803)
 
-[node name="Coin16" parent="." unique_id=1991166594 instance=ExtResource("10_vtaks")]
+[node name="Coin16" parent="Coins" unique_id=1991166594 instance=ExtResource("10_vtaks")]
 position = Vector2(-967, -802)
 
-[node name="Coin42" parent="." unique_id=2136177526 instance=ExtResource("10_vtaks")]
+[node name="Coin42" parent="Coins" unique_id=2136177526 instance=ExtResource("10_vtaks")]
 position = Vector2(-728, -798)
 
-[node name="Coin2" parent="." unique_id=1576535209 instance=ExtResource("10_vtaks")]
+[node name="Coin2" parent="Coins" unique_id=1576535209 instance=ExtResource("10_vtaks")]
 position = Vector2(-1402, -410)
 
-[node name="Coin3" parent="." unique_id=1996349006 instance=ExtResource("10_vtaks")]
+[node name="Coin3" parent="Coins" unique_id=1996349006 instance=ExtResource("10_vtaks")]
 position = Vector2(-1249, -405)
 
-[node name="Coin47" parent="." unique_id=1536133486 instance=ExtResource("10_vtaks")]
+[node name="Coin47" parent="Coins" unique_id=1536133486 instance=ExtResource("10_vtaks")]
 position = Vector2(-1119, -604)
 
-[node name="Coin4" parent="." unique_id=205339551 instance=ExtResource("10_vtaks")]
+[node name="Coin4" parent="Coins" unique_id=205339551 instance=ExtResource("10_vtaks")]
 position = Vector2(-936, -57)
 
-[node name="Coin5" parent="." unique_id=217418872 instance=ExtResource("10_vtaks")]
+[node name="Coin5" parent="Coins" unique_id=217418872 instance=ExtResource("10_vtaks")]
 position = Vector2(148, -508)
 
-[node name="Coin48" parent="." unique_id=1921665503 instance=ExtResource("10_vtaks")]
+[node name="Coin48" parent="Coins" unique_id=1921665503 instance=ExtResource("10_vtaks")]
 position = Vector2(148, -508)
 
-[node name="Coin6" parent="." unique_id=1049636014 instance=ExtResource("10_vtaks")]
+[node name="Coin6" parent="Coins" unique_id=1049636014 instance=ExtResource("10_vtaks")]
 position = Vector2(-1267, -60)
 
-[node name="Coin20" parent="." unique_id=26321568 instance=ExtResource("10_vtaks")]
+[node name="Coin20" parent="Coins" unique_id=26321568 instance=ExtResource("10_vtaks")]
 position = Vector2(-1088, 869)
 
-[node name="Coin21" parent="." unique_id=1566469336 instance=ExtResource("10_vtaks")]
+[node name="Coin21" parent="Coins" unique_id=1566469336 instance=ExtResource("10_vtaks")]
 position = Vector2(-984, 806)
 
-[node name="Coin22" parent="." unique_id=1103254014 instance=ExtResource("10_vtaks")]
+[node name="Coin22" parent="Coins" unique_id=1103254014 instance=ExtResource("10_vtaks")]
 position = Vector2(-58, 450)
 
-[node name="Coin24" parent="." unique_id=1635414766 instance=ExtResource("10_vtaks")]
+[node name="Coin24" parent="Coins" unique_id=1635414766 instance=ExtResource("10_vtaks")]
 position = Vector2(-1378, 1017)
 
-[node name="Coin25" parent="." unique_id=1169580474 instance=ExtResource("10_vtaks")]
+[node name="Coin25" parent="Coins" unique_id=1169580474 instance=ExtResource("10_vtaks")]
 position = Vector2(-629, 1085)
 
-[node name="Coin26" parent="." unique_id=300504047 instance=ExtResource("10_vtaks")]
+[node name="Coin26" parent="Coins" unique_id=300504047 instance=ExtResource("10_vtaks")]
 position = Vector2(208, 1135)
 
-[node name="Coin27" parent="." unique_id=978560156 instance=ExtResource("10_vtaks")]
+[node name="Coin27" parent="Coins" unique_id=978560156 instance=ExtResource("10_vtaks")]
 position = Vector2(217, 744)
 
-[node name="Coin28" parent="." unique_id=689190220 instance=ExtResource("10_vtaks")]
+[node name="Coin28" parent="Coins" unique_id=689190220 instance=ExtResource("10_vtaks")]
 position = Vector2(83, 210)
 
-[node name="Coin29" parent="." unique_id=499070777 instance=ExtResource("10_vtaks")]
+[node name="Coin29" parent="Coins" unique_id=499070777 instance=ExtResource("10_vtaks")]
 position = Vector2(550, 19)
 
-[node name="Coin30" parent="." unique_id=2808856 instance=ExtResource("10_vtaks")]
+[node name="Coin30" parent="Coins" unique_id=2808856 instance=ExtResource("10_vtaks")]
 position = Vector2(581, -389)
 
-[node name="Coin31" parent="." unique_id=2030583577 instance=ExtResource("10_vtaks")]
+[node name="Coin31" parent="Coins" unique_id=2030583577 instance=ExtResource("10_vtaks")]
 position = Vector2(1039, -354)
 
-[node name="Coin33" parent="." unique_id=1005182052 instance=ExtResource("10_vtaks")]
+[node name="Coin33" parent="Coins" unique_id=1005182052 instance=ExtResource("10_vtaks")]
 position = Vector2(-36, -811)
 
-[node name="Coin34" parent="." unique_id=1836622751 instance=ExtResource("10_vtaks")]
+[node name="Coin34" parent="Coins" unique_id=1836622751 instance=ExtResource("10_vtaks")]
 position = Vector2(356, -1054)
 
-[node name="Coin35" parent="." unique_id=14864855 instance=ExtResource("10_vtaks")]
+[node name="Coin35" parent="Coins" unique_id=14864855 instance=ExtResource("10_vtaks")]
 position = Vector2(846, -811)
 
-[node name="Coin36" parent="." unique_id=734239358 instance=ExtResource("10_vtaks")]
+[node name="Coin36" parent="Coins" unique_id=734239358 instance=ExtResource("10_vtaks")]
 position = Vector2(1278, -818)
 
-[node name="Coin37" parent="." unique_id=419828155 instance=ExtResource("10_vtaks")]
+[node name="Coin37" parent="Coins" unique_id=419828155 instance=ExtResource("10_vtaks")]
 position = Vector2(1009, -1093)
 
-[node name="Coin62" parent="." unique_id=1926496506 instance=ExtResource("10_vtaks")]
+[node name="Coin62" parent="Coins" unique_id=1926496506 instance=ExtResource("10_vtaks")]
 position = Vector2(1080, -1076)
 
-[node name="Coin63" parent="." unique_id=1533975984 instance=ExtResource("10_vtaks")]
+[node name="Coin63" parent="Coins" unique_id=1533975984 instance=ExtResource("10_vtaks")]
 position = Vector2(1127, -1027)
 
-[node name="Coin38" parent="." unique_id=1115429156 instance=ExtResource("10_vtaks")]
+[node name="Coin38" parent="Coins" unique_id=1115429156 instance=ExtResource("10_vtaks")]
 position = Vector2(912, 442)
 
-[node name="Coin59" parent="." unique_id=2064853932 instance=ExtResource("10_vtaks")]
+[node name="Coin59" parent="Coins" unique_id=2064853932 instance=ExtResource("10_vtaks")]
 position = Vector2(1104, 486)
 
-[node name="Coin60" parent="." unique_id=293930280 instance=ExtResource("10_vtaks")]
+[node name="Coin60" parent="Coins" unique_id=293930280 instance=ExtResource("10_vtaks")]
 position = Vector2(1139, 359)
 
-[node name="Coin61" parent="." unique_id=1869300387 instance=ExtResource("10_vtaks")]
+[node name="Coin61" parent="Coins" unique_id=1869300387 instance=ExtResource("10_vtaks")]
 position = Vector2(1255, 245)
 
-[node name="Coin39" parent="." unique_id=809575236 instance=ExtResource("10_vtaks")]
+[node name="Coin39" parent="Coins" unique_id=809575236 instance=ExtResource("10_vtaks")]
 position = Vector2(894, 992)
 
-[node name="Coin40" parent="." unique_id=236113600 instance=ExtResource("10_vtaks")]
+[node name="Coin40" parent="Coins" unique_id=236113600 instance=ExtResource("10_vtaks")]
 position = Vector2(822, 1126)
 
-[node name="Coin41" parent="." unique_id=418547676 instance=ExtResource("10_vtaks")]
+[node name="Coin41" parent="Coins" unique_id=418547676 instance=ExtResource("10_vtaks")]
 position = Vector2(494, 1130)
 
-[node name="Coin32" parent="." unique_id=1303134113 instance=ExtResource("10_vtaks")]
+[node name="Coin32" parent="Coins" unique_id=1303134113 instance=ExtResource("10_vtaks")]
 position = Vector2(661, -585)
 
-[node name="Coin23" parent="." unique_id=1690309515 instance=ExtResource("10_vtaks")]
+[node name="Coin23" parent="Coins" unique_id=1690309515 instance=ExtResource("10_vtaks")]
 position = Vector2(-165, 600)
 
-[node name="Coin7" parent="." unique_id=1586708202 instance=ExtResource("10_vtaks")]
+[node name="Coin7" parent="Coins" unique_id=1586708202 instance=ExtResource("10_vtaks")]
 position = Vector2(-241, -455)
 
-[node name="Coin64" parent="." unique_id=1859428624 instance=ExtResource("10_vtaks")]
+[node name="Coin64" parent="Coins" unique_id=1859428624 instance=ExtResource("10_vtaks")]
 position = Vector2(27, -354)
 
-[node name="Coin8" parent="." unique_id=787980348 instance=ExtResource("10_vtaks")]
+[node name="Coin8" parent="Coins" unique_id=787980348 instance=ExtResource("10_vtaks")]
 position = Vector2(-579, -43)
 
-[node name="Coin9" parent="." unique_id=994491497 instance=ExtResource("10_vtaks")]
+[node name="Coin9" parent="Coins" unique_id=994491497 instance=ExtResource("10_vtaks")]
 position = Vector2(-1074, -408)
 
-[node name="Coin44" parent="." unique_id=1170097343 instance=ExtResource("10_vtaks")]
+[node name="Coin44" parent="Coins" unique_id=1170097343 instance=ExtResource("10_vtaks")]
 position = Vector2(-435, -369)
 
-[node name="Coin45" parent="." unique_id=1618346516 instance=ExtResource("10_vtaks")]
+[node name="Coin45" parent="Coins" unique_id=1618346516 instance=ExtResource("10_vtaks")]
 position = Vector2(-434, -218)
 
-[node name="Coin46" parent="." unique_id=61433616 instance=ExtResource("10_vtaks")]
+[node name="Coin46" parent="Coins" unique_id=61433616 instance=ExtResource("10_vtaks")]
 position = Vector2(-325, -511)
 
-[node name="Coin43" parent="." unique_id=1428067841 instance=ExtResource("10_vtaks")]
+[node name="Coin43" parent="Coins" unique_id=1428067841 instance=ExtResource("10_vtaks")]
 position = Vector2(-886, -1013)
 
-[node name="Coin17" parent="." unique_id=1826738267 instance=ExtResource("10_vtaks")]
+[node name="Coin17" parent="Coins" unique_id=1826738267 instance=ExtResource("10_vtaks")]
 position = Vector2(-1332, -233)
 
-[node name="Coin18" parent="." unique_id=1225203383 instance=ExtResource("10_vtaks")]
+[node name="Coin18" parent="Coins" unique_id=1225203383 instance=ExtResource("10_vtaks")]
 position = Vector2(-1107, -235)
 
-[node name="Coin19" parent="." unique_id=1106177108 instance=ExtResource("10_vtaks")]
+[node name="Coin19" parent="Coins" unique_id=1106177108 instance=ExtResource("10_vtaks")]
 position = Vector2(-896, -258)
 
-[node name="Platform" parent="." unique_id=491382603 instance=ExtResource("11_kvpfn")]
-position = Vector2(-1456, -570)
-
-[node name="Platform2" parent="." unique_id=1766374572 instance=ExtResource("11_kvpfn")]
-position = Vector2(-1327, -651)
-
-[node name="Platform3" parent="." unique_id=1634205821 instance=ExtResource("11_kvpfn")]
-position = Vector2(-1296, -651)
-
-[node name="Platform4" parent="." unique_id=1486212718 instance=ExtResource("11_kvpfn")]
-position = Vector2(-1428, -729)
-
-[node name="Platform5" parent="." unique_id=1918472657 instance=ExtResource("11_kvpfn")]
-position = Vector2(-1458, -729)
-
-[node name="Platform6" parent="." unique_id=1181196019 instance=ExtResource("11_kvpfn")]
-position = Vector2(-1297, -764)
-
-[node name="Platform7" parent="." unique_id=928622019 instance=ExtResource("11_kvpfn")]
-position = Vector2(-1423, -570)
-
-[node name="Platform8" parent="." unique_id=2000796882 instance=ExtResource("11_kvpfn")]
-position = Vector2(-1311, -494)
-
-[node name="Platform29" parent="." unique_id=435193534 instance=ExtResource("11_kvpfn")]
-position = Vector2(-1339, -494)
-
-[node name="Coin10" parent="." unique_id=851831488 instance=ExtResource("10_vtaks")]
+[node name="Coin10" parent="Coins" unique_id=851831488 instance=ExtResource("10_vtaks")]
 position = Vector2(-1395, -849)
 
-[node name="Coin11" parent="." unique_id=574510235 instance=ExtResource("10_vtaks")]
+[node name="Coin11" parent="Coins" unique_id=574510235 instance=ExtResource("10_vtaks")]
 position = Vector2(-1353, -850)
 
-[node name="Coin12" parent="." unique_id=1895396566 instance=ExtResource("10_vtaks")]
+[node name="Coin12" parent="Coins" unique_id=1895396566 instance=ExtResource("10_vtaks")]
 position = Vector2(-1309, -850)
 
-[node name="Coin13" parent="." unique_id=517322929 instance=ExtResource("10_vtaks")]
+[node name="Coin13" parent="Coins" unique_id=517322929 instance=ExtResource("10_vtaks")]
 position = Vector2(-1446, -915)
 
-[node name="Coin14" parent="." unique_id=1632307214 instance=ExtResource("10_vtaks")]
+[node name="Coin14" parent="Coins" unique_id=1632307214 instance=ExtResource("10_vtaks")]
 position = Vector2(-1405, -915)
 
-[node name="Platform9" parent="." unique_id=138336580 instance=ExtResource("11_kvpfn")]
+[node name="Coin49" parent="Coins" unique_id=1111263229 instance=ExtResource("10_vtaks")]
+position = Vector2(127, 599)
+
+[node name="Coin50" parent="Coins" unique_id=596908476 instance=ExtResource("10_vtaks")]
+position = Vector2(43, 531)
+
+[node name="Coin51" parent="Coins" unique_id=1857378923 instance=ExtResource("10_vtaks")]
+position = Vector2(122, 483)
+
+[node name="Coin52" parent="Coins" unique_id=1599993721 instance=ExtResource("10_vtaks")]
+position = Vector2(206, 436)
+
+[node name="Coin53" parent="Coins" unique_id=1618493355 instance=ExtResource("10_vtaks")]
+position = Vector2(445, 298)
+
+[node name="Coin54" parent="Coins" unique_id=1531920292 instance=ExtResource("10_vtaks")]
+position = Vector2(583, -551)
+
+[node name="Coin55" parent="Coins" unique_id=801810523 instance=ExtResource("10_vtaks")]
+position = Vector2(671, -604)
+
+[node name="Coin56" parent="Coins" unique_id=1752752543 instance=ExtResource("10_vtaks")]
+position = Vector2(755, -567)
+
+[node name="Coin57" parent="Coins" unique_id=106897523 instance=ExtResource("10_vtaks")]
+position = Vector2(584, -682)
+
+[node name="Coin58" parent="Coins" unique_id=1376739814 instance=ExtResource("10_vtaks")]
+position = Vector2(877, -604)
+
+[node name="Coin65" parent="Coins" unique_id=1144283288 instance=ExtResource("10_vtaks")]
+position = Vector2(1428, -201)
+
+[node name="Coin66" parent="Coins" unique_id=249191037 instance=ExtResource("10_vtaks")]
+position = Vector2(1318, -39)
+
+[node name="Coin67" parent="Coins" unique_id=536575875 instance=ExtResource("10_vtaks")]
+position = Vector2(1432, 71)
+
+[node name="Coin68" parent="Coins" unique_id=1894406222 instance=ExtResource("10_vtaks")]
+position = Vector2(1123, 218)
+
+[node name="Coin69" parent="Coins" unique_id=1758442733 instance=ExtResource("10_vtaks")]
+position = Vector2(-207, -98)
+
+[node name="Coin70" parent="Coins" unique_id=495186645 instance=ExtResource("10_vtaks")]
+position = Vector2(-638, -866)
+
+[node name="Coin71" parent="Coins" unique_id=1716243261 instance=ExtResource("10_vtaks")]
+position = Vector2(-503, -798)
+
+[node name="Coin72" parent="Coins" unique_id=1639154853 instance=ExtResource("10_vtaks")]
+position = Vector2(-634, -688)
+
+[node name="Coin73" parent="Coins" unique_id=1514174048 instance=ExtResource("10_vtaks")]
+position = Vector2(-450, -1043)
+
+[node name="Coin74" parent="Coins" unique_id=1087834958 instance=ExtResource("10_vtaks")]
+position = Vector2(-316, -1042)
+
+[node name="Coin75" parent="Coins" unique_id=974013369 instance=ExtResource("10_vtaks")]
+position = Vector2(-190, -1040)
+
+[node name="Coin76" parent="Coins" unique_id=1232401122 instance=ExtResource("10_vtaks")]
+position = Vector2(1141, 707)
+
+[node name="Coin77" parent="Coins" unique_id=1031352671 instance=ExtResource("10_vtaks")]
+position = Vector2(1064, 773)
+
+[node name="Coin78" parent="Coins" unique_id=155315675 instance=ExtResource("10_vtaks")]
+position = Vector2(1427, 898)
+
+[node name="Coin79" parent="Coins" unique_id=383714162 instance=ExtResource("10_vtaks")]
+position = Vector2(1071, 874)
+
+[node name="Coin80" parent="Coins" unique_id=1355615487 instance=ExtResource("10_vtaks")]
+position = Vector2(-888, 611)
+
+[node name="Coin81" parent="Coins" unique_id=1273090214 instance=ExtResource("10_vtaks")]
+position = Vector2(-754, 610)
+
+[node name="Coin82" parent="Coins" unique_id=380345990 instance=ExtResource("10_vtaks")]
+position = Vector2(-642, 608)
+
+[node name="Coin83" parent="Coins" unique_id=63085520 instance=ExtResource("10_vtaks")]
+position = Vector2(-504, 606)
+
+[node name="Coin84" parent="Coins" unique_id=1262858327 instance=ExtResource("10_vtaks")]
+position = Vector2(-377, 603)
+
+[node name="Coin85" parent="Coins" unique_id=914149850 instance=ExtResource("10_vtaks")]
+position = Vector2(-267, 603)
+
+[node name="Platforms" type="Node" parent="." unique_id=1666346518]
+
+[node name="Platform" parent="Platforms" unique_id=491382603 instance=ExtResource("11_kvpfn")]
+position = Vector2(-1456, -570)
+
+[node name="Platform2" parent="Platforms" unique_id=1766374572 instance=ExtResource("11_kvpfn")]
+position = Vector2(-1327, -651)
+
+[node name="Platform3" parent="Platforms" unique_id=1634205821 instance=ExtResource("11_kvpfn")]
+position = Vector2(-1296, -651)
+
+[node name="Platform4" parent="Platforms" unique_id=1486212718 instance=ExtResource("11_kvpfn")]
+position = Vector2(-1428, -729)
+
+[node name="Platform5" parent="Platforms" unique_id=1918472657 instance=ExtResource("11_kvpfn")]
+position = Vector2(-1458, -729)
+
+[node name="Platform6" parent="Platforms" unique_id=1181196019 instance=ExtResource("11_kvpfn")]
+position = Vector2(-1297, -764)
+
+[node name="Platform7" parent="Platforms" unique_id=928622019 instance=ExtResource("11_kvpfn")]
+position = Vector2(-1423, -570)
+
+[node name="Platform8" parent="Platforms" unique_id=2000796882 instance=ExtResource("11_kvpfn")]
+position = Vector2(-1311, -494)
+
+[node name="Platform29" parent="Platforms" unique_id=435193534 instance=ExtResource("11_kvpfn")]
+position = Vector2(-1339, -494)
+
+[node name="Platform9" parent="Platforms" unique_id=138336580 instance=ExtResource("11_kvpfn")]
 position = Vector2(-433, -571)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform9" unique_id=2037048366]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform9" unique_id=2037048366]
 libraries/ = SubResource("AnimationLibrary_kvuet")
 autoplay = &"move"
 
-[node name="Platform10" parent="." unique_id=1303988699 instance=ExtResource("11_kvpfn")]
+[node name="Platform10" parent="Platforms" unique_id=1303988699 instance=ExtResource("11_kvpfn")]
 position = Vector2(-325, -488)
 
-[node name="Platform11" parent="." unique_id=725033261 instance=ExtResource("11_kvpfn")]
+[node name="Platform11" parent="Platforms" unique_id=725033261 instance=ExtResource("11_kvpfn")]
 position = Vector2(-427, -411)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform11" unique_id=1088319027]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform11" unique_id=1088319027]
 libraries/ = SubResource("AnimationLibrary_ca42v")
 autoplay = &"move"
 
-[node name="Platform12" parent="." unique_id=1910315186 instance=ExtResource("11_kvpfn")]
+[node name="Platform12" parent="Platforms" unique_id=1910315186 instance=ExtResource("11_kvpfn")]
 position = Vector2(-432, -344)
 
-[node name="Platform13" parent="." unique_id=271073323 instance=ExtResource("11_kvpfn")]
+[node name="Platform13" parent="Platforms" unique_id=271073323 instance=ExtResource("11_kvpfn")]
 position = Vector2(-442, -270)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform13" unique_id=579768512]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform13" unique_id=579768512]
 libraries/ = SubResource("AnimationLibrary_264po")
 autoplay = &"move"
 
-[node name="Platform14" parent="." unique_id=2069548355 instance=ExtResource("11_kvpfn")]
+[node name="Platform14" parent="Platforms" unique_id=2069548355 instance=ExtResource("11_kvpfn")]
 position = Vector2(-433, -195)
 
-[node name="Platform15" parent="." unique_id=123210047 instance=ExtResource("11_kvpfn")]
+[node name="Platform15" parent="Platforms" unique_id=123210047 instance=ExtResource("11_kvpfn")]
 position = Vector2(-379, -153)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform15" unique_id=463045425]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform15" unique_id=463045425]
 libraries/ = SubResource("AnimationLibrary_37s47")
 autoplay = &"move"
 
-[node name="Enemy" parent="." unique_id=1778880582 instance=ExtResource("12_dinhu")]
-position = Vector2(-1022, -599)
-
-[node name="Enemy2" parent="." unique_id=1217073659 instance=ExtResource("12_dinhu")]
-position = Vector2(-582, -349)
-
-[node name="Platform16" parent="." unique_id=1364098975 instance=ExtResource("11_kvpfn")]
-position = Vector2(-845, -571)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform16" unique_id=1079502807]
-libraries/ = SubResource("AnimationLibrary_rysoc")
-autoplay = &"move"
-
-[node name="Platform17" parent="." unique_id=235269090 instance=ExtResource("11_kvpfn")]
+[node name="Platform17" parent="Platforms" unique_id=235269090 instance=ExtResource("11_kvpfn")]
 position = Vector2(-639, -1018)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform17" unique_id=1612326249]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform17" unique_id=1612326249]
 libraries/ = SubResource("AnimationLibrary_bt5mj")
 autoplay = &"move"
 
-[node name="Enemy3" parent="." unique_id=565982783 instance=ExtResource("12_dinhu")]
-position = Vector2(269, 102)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy3" unique_id=2002557268]
-libraries/ = SubResource("AnimationLibrary_pl11u")
-
-[node name="Enemy4" parent="." unique_id=1138462800 instance=ExtResource("12_dinhu")]
-position = Vector2(-810, 404)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy4" unique_id=1460390287]
-libraries/ = SubResource("AnimationLibrary_qnb83")
-autoplay = &"move"
-
-[node name="Platform18" parent="." unique_id=779971266 instance=ExtResource("13_kvuet")]
+[node name="Platform18" parent="Platforms" unique_id=779971266 instance=ExtResource("13_kvuet")]
 position = Vector2(543, 630)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform18" unique_id=1044516974]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform18" unique_id=1044516974]
 libraries/ = SubResource("AnimationLibrary_sgl2t")
 autoplay = &"moce"
 
-[node name="Coin49" parent="." unique_id=1111263229 instance=ExtResource("10_vtaks")]
-position = Vector2(127, 599)
-
-[node name="Coin50" parent="." unique_id=596908476 instance=ExtResource("10_vtaks")]
-position = Vector2(43, 531)
-
-[node name="Coin51" parent="." unique_id=1857378923 instance=ExtResource("10_vtaks")]
-position = Vector2(122, 483)
-
-[node name="Coin52" parent="." unique_id=1599993721 instance=ExtResource("10_vtaks")]
-position = Vector2(206, 436)
-
-[node name="Coin53" parent="." unique_id=1618493355 instance=ExtResource("10_vtaks")]
-position = Vector2(445, 298)
-
-[node name="enemy purple" parent="." unique_id=480822311 instance=ExtResource("14_ca42v")]
-position = Vector2(1436, 738)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="enemy purple" unique_id=229062155]
-libraries/ = SubResource("AnimationLibrary_qouja")
-autoplay = &"move"
-
-[node name="enemy purple2" parent="." unique_id=394783537 instance=ExtResource("14_ca42v")]
-position = Vector2(1378, 738)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="enemy purple2" unique_id=939369655]
-libraries/ = SubResource("AnimationLibrary_js0lu")
-autoplay = &"move"
-
-[node name="enemy purple3" parent="." unique_id=220081882 instance=ExtResource("14_ca42v")]
-position = Vector2(1407, 737)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="enemy purple3" unique_id=1123748821]
-libraries/ = SubResource("AnimationLibrary_02fa5")
-autoplay = &"move"
-
-[node name="enemy purple4" parent="." unique_id=2024149673 instance=ExtResource("14_ca42v")]
-position = Vector2(788, 706)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="enemy purple4" unique_id=1467315762]
-libraries/ = SubResource("AnimationLibrary_m4url")
-
-[node name="enemy purple5" parent="." unique_id=1966488168 instance=ExtResource("14_ca42v")]
-position = Vector2(1364, 205)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="enemy purple5" unique_id=564248409]
-libraries/ = SubResource("AnimationLibrary_05nbr")
-autoplay = &"move"
-
-[node name="enemy purple6" parent="." unique_id=1117789413 instance=ExtResource("14_ca42v")]
-position = Vector2(1432, 206)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="enemy purple6" unique_id=2051564589]
-libraries/ = SubResource("AnimationLibrary_458eo")
-autoplay = &"move"
-
-[node name="enemy purple7" parent="." unique_id=1807981771 instance=ExtResource("14_ca42v")]
-position = Vector2(1397, 205)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="enemy purple7" unique_id=122796875]
-libraries/ = SubResource("AnimationLibrary_8qswn")
-autoplay = &"move"
-
-[node name="blueenemy" parent="." unique_id=2012612512 instance=ExtResource("15_rysoc")]
-position = Vector2(1332, -625.00006)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="blueenemy" unique_id=761802245]
-libraries/ = SubResource("AnimationLibrary_q8j3a")
-autoplay = &"move "
-
-[node name="blueenemy2" parent="." unique_id=2041748485 instance=ExtResource("15_rysoc")]
-position = Vector2(1384, -626)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="blueenemy2" unique_id=523375936]
-libraries/ = SubResource("AnimationLibrary_pf7vy")
-autoplay = &"move"
-
-[node name="Coin54" parent="." unique_id=1531920292 instance=ExtResource("10_vtaks")]
-position = Vector2(583, -551)
-
-[node name="Coin55" parent="." unique_id=801810523 instance=ExtResource("10_vtaks")]
-position = Vector2(671, -604)
-
-[node name="Coin56" parent="." unique_id=1752752543 instance=ExtResource("10_vtaks")]
-position = Vector2(755, -567)
-
-[node name="blueenemy4" parent="." unique_id=295423944 instance=ExtResource("15_rysoc")]
-position = Vector2(621, -471.00003)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="blueenemy4" unique_id=1886438397]
-libraries/ = SubResource("AnimationLibrary_bk1p3")
-autoplay = &"move"
-
-[node name="blueenemy5" parent="." unique_id=1553418246 instance=ExtResource("15_rysoc")]
-position = Vector2(716, -472.00003)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="blueenemy5" unique_id=131771056]
-libraries/ = SubResource("AnimationLibrary_66xif")
-autoplay = &"move"
-
-[node name="yellowenemy2" parent="." unique_id=418058163 instance=ExtResource("16_ssvqc")]
-position = Vector2(-1215, 918)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="yellowenemy2" unique_id=2051714191]
-libraries/ = SubResource("AnimationLibrary_mmvbu")
-autoplay = &"move"
-
-[node name="yellowenemy3" parent="." unique_id=1977997531 instance=ExtResource("16_ssvqc")]
-position = Vector2(-1179, 640)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="yellowenemy3" unique_id=1162117410]
-libraries/ = SubResource("AnimationLibrary_gxtfn")
-autoplay = &"move"
-
-[node name="yellowenemy4" parent="." unique_id=603975463 instance=ExtResource("16_ssvqc")]
-position = Vector2(-1145, 911)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="yellowenemy4" unique_id=1613438546]
-libraries/ = SubResource("AnimationLibrary_8ool0")
-autoplay = &"move"
-
-[node name="yellowenemy6" parent="." unique_id=1623701082 instance=ExtResource("16_ssvqc")]
-position = Vector2(-384, 1125)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="yellowenemy6" unique_id=1035130242]
-libraries/ = SubResource("AnimationLibrary_h3rex")
-autoplay = &"move"
-
-[node name="yellowenemy7" parent="." unique_id=1276353582 instance=ExtResource("16_ssvqc")]
-position = Vector2(-54, 1122)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="yellowenemy7" unique_id=259452358]
-libraries/ = SubResource("AnimationLibrary_o8ni1")
-autoplay = &"move"
-
-[node name="yellowenemy8" parent="." unique_id=941014026 instance=ExtResource("16_ssvqc")]
-position = Vector2(-220, 1120)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="yellowenemy8" unique_id=2093022599]
-libraries/ = SubResource("AnimationLibrary_n8ral")
-autoplay = &"move"
-
-[node name="yellowenemy9" parent="." unique_id=1238874902 instance=ExtResource("16_ssvqc")]
-position = Vector2(-155, 1123)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="yellowenemy9" unique_id=1277919525]
-libraries/ = SubResource("AnimationLibrary_3x28f")
-autoplay = &"move"
-
-[node name="enemy purple8" parent="." unique_id=679059669 instance=ExtResource("14_ca42v")]
-position = Vector2(544, 867)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="enemy purple8" unique_id=692986894]
-libraries/ = SubResource("AnimationLibrary_weeiq")
-
-[node name="enemy purple9" parent="." unique_id=1056840611 instance=ExtResource("14_ca42v")]
-position = Vector2(1073, 11)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="enemy purple9" unique_id=884925730]
-libraries/ = SubResource("AnimationLibrary_o8oq8")
-autoplay = &"move"
-
-[node name="enemy purple10" parent="." unique_id=479700149 instance=ExtResource("14_ca42v")]
-position = Vector2(1072, 78)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="enemy purple10" unique_id=1981201198]
-libraries/ = SubResource("AnimationLibrary_7gkqi")
-autoplay = &"move"
-
-[node name="enemy purple11" parent="." unique_id=58368707 instance=ExtResource("14_ca42v")]
-position = Vector2(1169, 11)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="enemy purple11" unique_id=1565423505]
-libraries/ = SubResource("AnimationLibrary_1yg85")
-autoplay = &"move"
-
-[node name="yellowenemy10" parent="." unique_id=662945860 instance=ExtResource("16_ssvqc")]
-position = Vector2(-488, 271)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="yellowenemy10" unique_id=437931664]
-libraries/ = SubResource("AnimationLibrary_vgxg3")
-autoplay = &"move"
-
-[node name="Platform19" parent="." unique_id=822103668 instance=ExtResource("13_kvuet")]
+[node name="Platform19" parent="Platforms" unique_id=822103668 instance=ExtResource("13_kvuet")]
 position = Vector2(577, -940)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform19" unique_id=2057161761]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform19" unique_id=2057161761]
 libraries/ = SubResource("AnimationLibrary_sxt1d")
 autoplay = &"move "
 
-[node name="Platform21" parent="." unique_id=2105678868 instance=ExtResource("13_kvuet")]
+[node name="Platform21" parent="Platforms" unique_id=2105678868 instance=ExtResource("13_kvuet")]
 position = Vector2(736, -833)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform21" unique_id=413587267]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform21" unique_id=413587267]
 libraries/ = SubResource("AnimationLibrary_s0g06")
 autoplay = &"move"
 
-[node name="Platform20" parent="." unique_id=1503122893 instance=ExtResource("13_kvuet")]
+[node name="Platform20" parent="Platforms" unique_id=1503122893 instance=ExtResource("13_kvuet")]
 position = Vector2(585, -893)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform20" unique_id=1147399620]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform20" unique_id=1147399620]
 libraries/ = SubResource("AnimationLibrary_fkywm")
 autoplay = &"move"
 
-[node name="Platform22" parent="." unique_id=1187049973 instance=ExtResource("13_kvuet")]
-position = Vector2(578, -768)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform22" unique_id=294016440]
-libraries/ = SubResource("AnimationLibrary_flw08")
-autoplay = &"move"
-
-[node name="Coin57" parent="." unique_id=106897523 instance=ExtResource("10_vtaks")]
-position = Vector2(584, -682)
-
-[node name="Coin58" parent="." unique_id=1376739814 instance=ExtResource("10_vtaks")]
-position = Vector2(877, -604)
-
-[node name="blueenemy3" parent="." unique_id=1779896042 instance=ExtResource("15_rysoc")]
-position = Vector2(1436, -637)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="blueenemy3" unique_id=243598456]
-libraries/ = SubResource("AnimationLibrary_84hbc")
-autoplay = &"move "
-
-[node name="Coin65" parent="." unique_id=1144283288 instance=ExtResource("10_vtaks")]
-position = Vector2(1428, -201)
-
-[node name="Coin66" parent="." unique_id=249191037 instance=ExtResource("10_vtaks")]
-position = Vector2(1318, -39)
-
-[node name="Coin67" parent="." unique_id=536575875 instance=ExtResource("10_vtaks")]
-position = Vector2(1432, 71)
-
-[node name="Coin68" parent="." unique_id=1894406222 instance=ExtResource("10_vtaks")]
-position = Vector2(1123, 218)
-
-[node name="yellowplatform" parent="." unique_id=1878934565 instance=ExtResource("18_ssvqc")]
+[node name="yellowplatform" parent="Platforms" unique_id=1878934565 instance=ExtResource("18_ssvqc")]
 position = Vector2(-622, 807)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="yellowplatform" unique_id=1224500844]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/yellowplatform" unique_id=1224500844]
 libraries/ = SubResource("AnimationLibrary_veukt")
 
-[node name="yellowenemy5" parent="." unique_id=1690397779 instance=ExtResource("16_ssvqc")]
-position = Vector2(-627, 857)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="yellowenemy5" unique_id=1393215316]
-libraries/ = SubResource("AnimationLibrary_ounyb")
-autoplay = &"move "
-
-[node name="Platform23" parent="." unique_id=1084113604 instance=ExtResource("13_kvuet")]
+[node name="Platform23" parent="Platforms" unique_id=1084113604 instance=ExtResource("13_kvuet")]
 position = Vector2(47, -810)
 
-[node name="Platform24" parent="." unique_id=1302813745 instance=ExtResource("13_kvuet")]
+[node name="Platform24" parent="Platforms" unique_id=1302813745 instance=ExtResource("13_kvuet")]
 position = Vector2(175, -882)
 
-[node name="Platform25" parent="." unique_id=746305087 instance=ExtResource("13_kvuet")]
+[node name="Platform25" parent="Platforms" unique_id=746305087 instance=ExtResource("13_kvuet")]
 position = Vector2(46, -990)
 
-[node name="Platform26" parent="." unique_id=329133865 instance=ExtResource("13_kvuet")]
+[node name="Platform26" parent="Platforms" unique_id=329133865 instance=ExtResource("13_kvuet")]
 position = Vector2(78, -990)
 
-[node name="Platform27" parent="." unique_id=59565632 instance=ExtResource("13_kvuet")]
+[node name="Platform27" parent="Platforms" unique_id=59565632 instance=ExtResource("13_kvuet")]
 position = Vector2(143, -882)
 
-[node name="Platform28" parent="." unique_id=566232167 instance=ExtResource("13_kvuet")]
+[node name="Platform28" parent="Platforms" unique_id=566232167 instance=ExtResource("13_kvuet")]
 position = Vector2(80, -810)
 
-[node name="blueenemy6" parent="." unique_id=1489008112 instance=ExtResource("15_rysoc")]
-position = Vector2(423, -828)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="blueenemy6" unique_id=277186251]
-libraries/ = SubResource("AnimationLibrary_iekjf")
-
-[node name="blueenemy7" parent="." unique_id=1469743866 instance=ExtResource("15_rysoc")]
-position = Vector2(460, -777)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="blueenemy7" unique_id=594223753]
-libraries/ = SubResource("AnimationLibrary_p4npv")
-autoplay = &"kill"
-
-[node name="blueenemy8" parent="." unique_id=190469190 instance=ExtResource("15_rysoc")]
-position = Vector2(491, -828.00006)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="blueenemy8" unique_id=203138831]
-libraries/ = SubResource("AnimationLibrary_h5tdf")
-autoplay = &"kill"
-
-[node name="Coin69" parent="." unique_id=1758442733 instance=ExtResource("10_vtaks")]
-position = Vector2(-207, -98)
-
-[node name="Coin70" parent="." unique_id=495186645 instance=ExtResource("10_vtaks")]
-position = Vector2(-638, -866)
-
-[node name="Coin71" parent="." unique_id=1716243261 instance=ExtResource("10_vtaks")]
-position = Vector2(-503, -798)
-
-[node name="Coin72" parent="." unique_id=1639154853 instance=ExtResource("10_vtaks")]
-position = Vector2(-634, -688)
-
-[node name="Coin73" parent="." unique_id=1514174048 instance=ExtResource("10_vtaks")]
-position = Vector2(-450, -1043)
-
-[node name="Coin74" parent="." unique_id=1087834958 instance=ExtResource("10_vtaks")]
-position = Vector2(-316, -1042)
-
-[node name="Coin75" parent="." unique_id=974013369 instance=ExtResource("10_vtaks")]
-position = Vector2(-190, -1040)
-
-[node name="Platform30" parent="." unique_id=1763906803 instance=ExtResource("13_kvuet")]
+[node name="Platform30" parent="Platforms" unique_id=1763906803 instance=ExtResource("13_kvuet")]
 position = Vector2(52, -670)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform30" unique_id=1748995677]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform30" unique_id=1748995677]
 libraries/ = SubResource("AnimationLibrary_xjcjm")
 autoplay = &"move"
 
-[node name="blueenemy9" parent="." unique_id=1193701090 instance=ExtResource("15_rysoc")]
-position = Vector2(-5, -633)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="blueenemy9" unique_id=1611439575]
-libraries/ = SubResource("AnimationLibrary_gdf8r")
-autoplay = &"kill"
-
-[node name="Platform31" parent="." unique_id=680641472 instance=ExtResource("11_kvpfn")]
+[node name="Platform31" parent="Platforms" unique_id=680641472 instance=ExtResource("11_kvpfn")]
 position = Vector2(-1329, -764)
 
-[node name="Platform32" parent="." unique_id=1125428475 instance=ExtResource("13_kvuet")]
+[node name="Platform32" parent="Platforms" unique_id=1125428475 instance=ExtResource("13_kvuet")]
 position = Vector2(1185, -198)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform32" unique_id=1206420090]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform32" unique_id=1206420090]
 libraries/ = SubResource("AnimationLibrary_s33c4")
 autoplay = &"move "
 
-[node name="yellowplatform2" parent="." unique_id=329178993 instance=ExtResource("18_ssvqc")]
+[node name="yellowplatform2" parent="Platforms" unique_id=329178993 instance=ExtResource("18_ssvqc")]
 position = Vector2(-716, 1136)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="yellowplatform2" unique_id=2124652832]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/yellowplatform2" unique_id=2124652832]
 libraries/ = SubResource("AnimationLibrary_vniw0")
 autoplay = &"move "
 
-[node name="pinkplatform" parent="." unique_id=1345134294 instance=ExtResource("19_264po")]
+[node name="pinkplatform" parent="Platforms" unique_id=1345134294 instance=ExtResource("19_264po")]
 position = Vector2(1126, 855)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="pinkplatform" unique_id=1331010108]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/pinkplatform" unique_id=1331010108]
 libraries/ = SubResource("AnimationLibrary_de5we")
 autoplay = &"move "
 
-[node name="pinkplatform2" parent="." unique_id=883684771 instance=ExtResource("19_264po")]
+[node name="pinkplatform2" parent="Platforms" unique_id=883684771 instance=ExtResource("19_264po")]
 position = Vector2(1305, 707)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="pinkplatform2" unique_id=512047910]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/pinkplatform2" unique_id=512047910]
 libraries/ = SubResource("AnimationLibrary_8tghg")
 autoplay = &"move"
 
-[node name="pinkplatform3" parent="." unique_id=286185491 instance=ExtResource("19_264po")]
+[node name="pinkplatform3" parent="Platforms" unique_id=286185491 instance=ExtResource("19_264po")]
 position = Vector2(1233, 673)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="pinkplatform3" unique_id=1773273234]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/pinkplatform3" unique_id=1773273234]
 libraries/ = SubResource("AnimationLibrary_2tvof")
 autoplay = &"move "
 
-[node name="pinkplatform4" parent="." unique_id=1201988576 instance=ExtResource("19_264po")]
+[node name="pinkplatform4" parent="Platforms" unique_id=1201988576 instance=ExtResource("19_264po")]
 position = Vector2(1304, 632)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="pinkplatform4" unique_id=507210375]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/pinkplatform4" unique_id=507210375]
 libraries/ = SubResource("AnimationLibrary_o3ulk")
 autoplay = &"move "
 
-[node name="pinkplatform5" parent="." unique_id=662922271 instance=ExtResource("19_264po")]
+[node name="pinkplatform5" parent="Platforms" unique_id=662922271 instance=ExtResource("19_264po")]
 position = Vector2(1233, 584)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="pinkplatform5" unique_id=1273522605]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/pinkplatform5" unique_id=1273522605]
 libraries/ = SubResource("AnimationLibrary_7kwaa")
 autoplay = &"move "
 
-[node name="pinkplatform6" parent="." unique_id=2074394048 instance=ExtResource("19_264po")]
+[node name="pinkplatform6" parent="Platforms" unique_id=2074394048 instance=ExtResource("19_264po")]
 position = Vector2(1300, 553)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="pinkplatform6" unique_id=833419677]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/pinkplatform6" unique_id=833419677]
 libraries/ = SubResource("AnimationLibrary_rekj2")
 autoplay = &"move "
 
-[node name="Coin76" parent="." unique_id=1232401122 instance=ExtResource("10_vtaks")]
-position = Vector2(1141, 707)
+[node name="yellowplatform3" parent="Platforms" unique_id=1521134619 instance=ExtResource("18_ssvqc")]
+position = Vector2(-425, 248)
 
-[node name="Coin77" parent="." unique_id=1031352671 instance=ExtResource("10_vtaks")]
-position = Vector2(1064, 773)
+[node name="yellowplatform4" parent="Platforms" unique_id=2082460957 instance=ExtResource("18_ssvqc")]
+position = Vector2(-395, 248)
 
-[node name="Coin78" parent="." unique_id=155315675 instance=ExtResource("10_vtaks")]
-position = Vector2(1427, 898)
+[node name="yellowplatform5" parent="Platforms" unique_id=427621613 instance=ExtResource("18_ssvqc")]
+position = Vector2(-497, 210)
 
-[node name="Coin79" parent="." unique_id=383714162 instance=ExtResource("10_vtaks")]
-position = Vector2(1071, 874)
+[node name="yellowplatform6" parent="Platforms" unique_id=1327334820 instance=ExtResource("18_ssvqc")]
+position = Vector2(-467, 210)
 
-[node name="enemy purple12" parent="." unique_id=802152873 instance=ExtResource("14_ca42v")]
+[node name="yellowplatform7" parent="Platforms" unique_id=553238328 instance=ExtResource("18_ssvqc")]
+position = Vector2(-1318, 162)
+
+[node name="yellowplatform8" parent="Platforms" unique_id=779645193 instance=ExtResource("18_ssvqc")]
+position = Vector2(-1288, 163)
+
+[node name="yellowplatform9" parent="Platforms" unique_id=917766144 instance=ExtResource("18_ssvqc")]
+position = Vector2(-1380, 116)
+
+[node name="yellowplatform10" parent="Platforms" unique_id=1346166128 instance=ExtResource("18_ssvqc")]
+position = Vector2(-1350, 117)
+
+[node name="Platform16" parent="Platforms" unique_id=1364098975 instance=ExtResource("11_kvpfn")]
+position = Vector2(-845, -571)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform16" unique_id=1079502807]
+libraries/ = SubResource("AnimationLibrary_rysoc")
+autoplay = &"move"
+
+[node name="Platform22" parent="Platforms" unique_id=1187049973 instance=ExtResource("13_kvuet")]
+position = Vector2(578, -768)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform22" unique_id=294016440]
+libraries/ = SubResource("AnimationLibrary_flw08")
+autoplay = &"move"
+
+[node name="Enemies" type="Node" parent="." unique_id=1938074654]
+
+[node name="Enemy" parent="Enemies" unique_id=1778880582 instance=ExtResource("12_dinhu")]
+position = Vector2(-1022, -599)
+
+[node name="Enemy2" parent="Enemies" unique_id=1217073659 instance=ExtResource("12_dinhu")]
+position = Vector2(-582, -349)
+
+[node name="Enemy3" parent="Enemies" unique_id=565982783 instance=ExtResource("12_dinhu")]
+position = Vector2(269, 102)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/Enemy3" unique_id=2002557268]
+libraries/ = SubResource("AnimationLibrary_pl11u")
+
+[node name="Enemy4" parent="Enemies" unique_id=1138462800 instance=ExtResource("12_dinhu")]
+position = Vector2(-810, 404)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/Enemy4" unique_id=1460390287]
+libraries/ = SubResource("AnimationLibrary_qnb83")
+autoplay = &"move"
+
+[node name="enemy purple" parent="Enemies" unique_id=480822311 instance=ExtResource("14_ca42v")]
+position = Vector2(1436, 738)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/enemy purple" unique_id=229062155]
+libraries/ = SubResource("AnimationLibrary_qouja")
+autoplay = &"move"
+
+[node name="enemy purple2" parent="Enemies" unique_id=394783537 instance=ExtResource("14_ca42v")]
+position = Vector2(1378, 738)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/enemy purple2" unique_id=939369655]
+libraries/ = SubResource("AnimationLibrary_js0lu")
+autoplay = &"move"
+
+[node name="enemy purple3" parent="Enemies" unique_id=220081882 instance=ExtResource("14_ca42v")]
+position = Vector2(1407, 737)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/enemy purple3" unique_id=1123748821]
+libraries/ = SubResource("AnimationLibrary_02fa5")
+autoplay = &"move"
+
+[node name="enemy purple4" parent="Enemies" unique_id=2024149673 instance=ExtResource("14_ca42v")]
+position = Vector2(788, 706)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/enemy purple4" unique_id=1467315762]
+libraries/ = SubResource("AnimationLibrary_m4url")
+
+[node name="enemy purple5" parent="Enemies" unique_id=1966488168 instance=ExtResource("14_ca42v")]
+position = Vector2(1364, 205)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/enemy purple5" unique_id=564248409]
+libraries/ = SubResource("AnimationLibrary_05nbr")
+autoplay = &"move"
+
+[node name="enemy purple6" parent="Enemies" unique_id=1117789413 instance=ExtResource("14_ca42v")]
+position = Vector2(1432, 206)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/enemy purple6" unique_id=2051564589]
+libraries/ = SubResource("AnimationLibrary_458eo")
+autoplay = &"move"
+
+[node name="enemy purple7" parent="Enemies" unique_id=1807981771 instance=ExtResource("14_ca42v")]
+position = Vector2(1397, 205)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/enemy purple7" unique_id=122796875]
+libraries/ = SubResource("AnimationLibrary_8qswn")
+autoplay = &"move"
+
+[node name="blueenemy" parent="Enemies" unique_id=2012612512 instance=ExtResource("15_rysoc")]
+position = Vector2(1332, -625.00006)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/blueenemy" unique_id=761802245]
+libraries/ = SubResource("AnimationLibrary_q8j3a")
+autoplay = &"move "
+
+[node name="blueenemy2" parent="Enemies" unique_id=2041748485 instance=ExtResource("15_rysoc")]
+position = Vector2(1384, -626)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/blueenemy2" unique_id=523375936]
+libraries/ = SubResource("AnimationLibrary_pf7vy")
+autoplay = &"move"
+
+[node name="blueenemy4" parent="Enemies" unique_id=295423944 instance=ExtResource("15_rysoc")]
+position = Vector2(621, -471.00003)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/blueenemy4" unique_id=1886438397]
+libraries/ = SubResource("AnimationLibrary_bk1p3")
+autoplay = &"move"
+
+[node name="blueenemy5" parent="Enemies" unique_id=1553418246 instance=ExtResource("15_rysoc")]
+position = Vector2(716, -472.00003)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/blueenemy5" unique_id=131771056]
+libraries/ = SubResource("AnimationLibrary_66xif")
+autoplay = &"move"
+
+[node name="yellowenemy2" parent="Enemies" unique_id=418058163 instance=ExtResource("16_ssvqc")]
+position = Vector2(-1215, 918)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/yellowenemy2" unique_id=2051714191]
+libraries/ = SubResource("AnimationLibrary_mmvbu")
+autoplay = &"move"
+
+[node name="yellowenemy3" parent="Enemies" unique_id=1977997531 instance=ExtResource("16_ssvqc")]
+position = Vector2(-1179, 640)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/yellowenemy3" unique_id=1162117410]
+libraries/ = SubResource("AnimationLibrary_gxtfn")
+autoplay = &"move"
+
+[node name="yellowenemy4" parent="Enemies" unique_id=603975463 instance=ExtResource("16_ssvqc")]
+position = Vector2(-1145, 911)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/yellowenemy4" unique_id=1613438546]
+libraries/ = SubResource("AnimationLibrary_8ool0")
+autoplay = &"move"
+
+[node name="yellowenemy6" parent="Enemies" unique_id=1623701082 instance=ExtResource("16_ssvqc")]
+position = Vector2(-384, 1125)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/yellowenemy6" unique_id=1035130242]
+libraries/ = SubResource("AnimationLibrary_h3rex")
+autoplay = &"move"
+
+[node name="yellowenemy7" parent="Enemies" unique_id=1276353582 instance=ExtResource("16_ssvqc")]
+position = Vector2(-54, 1122)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/yellowenemy7" unique_id=259452358]
+libraries/ = SubResource("AnimationLibrary_o8ni1")
+autoplay = &"move"
+
+[node name="yellowenemy8" parent="Enemies" unique_id=941014026 instance=ExtResource("16_ssvqc")]
+position = Vector2(-220, 1120)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/yellowenemy8" unique_id=2093022599]
+libraries/ = SubResource("AnimationLibrary_n8ral")
+autoplay = &"move"
+
+[node name="yellowenemy9" parent="Enemies" unique_id=1238874902 instance=ExtResource("16_ssvqc")]
+position = Vector2(-155, 1123)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/yellowenemy9" unique_id=1277919525]
+libraries/ = SubResource("AnimationLibrary_3x28f")
+autoplay = &"move"
+
+[node name="enemy purple8" parent="Enemies" unique_id=679059669 instance=ExtResource("14_ca42v")]
+position = Vector2(544, 867)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/enemy purple8" unique_id=692986894]
+libraries/ = SubResource("AnimationLibrary_weeiq")
+
+[node name="enemy purple9" parent="Enemies" unique_id=1056840611 instance=ExtResource("14_ca42v")]
+position = Vector2(1073, 11)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/enemy purple9" unique_id=884925730]
+libraries/ = SubResource("AnimationLibrary_o8oq8")
+autoplay = &"move"
+
+[node name="enemy purple10" parent="Enemies" unique_id=479700149 instance=ExtResource("14_ca42v")]
+position = Vector2(1072, 78)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/enemy purple10" unique_id=1981201198]
+libraries/ = SubResource("AnimationLibrary_7gkqi")
+autoplay = &"move"
+
+[node name="enemy purple11" parent="Enemies" unique_id=58368707 instance=ExtResource("14_ca42v")]
+position = Vector2(1169, 11)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/enemy purple11" unique_id=1565423505]
+libraries/ = SubResource("AnimationLibrary_1yg85")
+autoplay = &"move"
+
+[node name="yellowenemy10" parent="Enemies" unique_id=662945860 instance=ExtResource("16_ssvqc")]
+position = Vector2(-488, 271)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/yellowenemy10" unique_id=437931664]
+libraries/ = SubResource("AnimationLibrary_vgxg3")
+autoplay = &"move"
+
+[node name="blueenemy3" parent="Enemies" unique_id=1779896042 instance=ExtResource("15_rysoc")]
+position = Vector2(1436, -637)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/blueenemy3" unique_id=243598456]
+libraries/ = SubResource("AnimationLibrary_84hbc")
+autoplay = &"move "
+
+[node name="yellowenemy5" parent="Enemies" unique_id=1690397779 instance=ExtResource("16_ssvqc")]
+position = Vector2(-627, 857)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/yellowenemy5" unique_id=1393215316]
+libraries/ = SubResource("AnimationLibrary_ounyb")
+autoplay = &"move "
+
+[node name="blueenemy6" parent="Enemies" unique_id=1489008112 instance=ExtResource("15_rysoc")]
+position = Vector2(423, -828)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/blueenemy6" unique_id=277186251]
+libraries/ = SubResource("AnimationLibrary_iekjf")
+
+[node name="blueenemy7" parent="Enemies" unique_id=1469743866 instance=ExtResource("15_rysoc")]
+position = Vector2(460, -777)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/blueenemy7" unique_id=594223753]
+libraries/ = SubResource("AnimationLibrary_p4npv")
+autoplay = &"kill"
+
+[node name="blueenemy8" parent="Enemies" unique_id=190469190 instance=ExtResource("15_rysoc")]
+position = Vector2(491, -828.00006)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/blueenemy8" unique_id=203138831]
+libraries/ = SubResource("AnimationLibrary_h5tdf")
+autoplay = &"kill"
+
+[node name="blueenemy9" parent="Enemies" unique_id=1193701090 instance=ExtResource("15_rysoc")]
+position = Vector2(-5, -633)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/blueenemy9" unique_id=1611439575]
+libraries/ = SubResource("AnimationLibrary_gdf8r")
+autoplay = &"kill"
+
+[node name="enemy purple12" parent="Enemies" unique_id=802152873 instance=ExtResource("14_ca42v")]
 position = Vector2(240, 981)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="enemy purple12" unique_id=1164079891]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/enemy purple12" unique_id=1164079891]
 libraries/ = SubResource("AnimationLibrary_fsry6")
 autoplay = &"kill"
 
-[node name="enemy purple13" parent="." unique_id=618623683 instance=ExtResource("14_ca42v")]
+[node name="enemy purple13" parent="Enemies" unique_id=618623683 instance=ExtResource("14_ca42v")]
 position = Vector2(472, 978)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="enemy purple13" unique_id=359959679]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/enemy purple13" unique_id=359959679]
 libraries/ = SubResource("AnimationLibrary_jye5l")
 autoplay = &"kill"
 
-[node name="enemy purple15" parent="." unique_id=895181548 instance=ExtResource("14_ca42v")]
+[node name="enemy purple15" parent="Enemies" unique_id=895181548 instance=ExtResource("14_ca42v")]
 position = Vector2(621, 922)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="enemy purple15" unique_id=1188364366]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/enemy purple15" unique_id=1188364366]
 libraries/ = SubResource("AnimationLibrary_s6met")
 autoplay = &"kill"
 
-[node name="enemy purple14" parent="." unique_id=223415836 instance=ExtResource("14_ca42v")]
+[node name="enemy purple14" parent="Enemies" unique_id=223415836 instance=ExtResource("14_ca42v")]
 position = Vector2(772, 979)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="enemy purple14" unique_id=2079372114]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/enemy purple14" unique_id=2079372114]
 libraries/ = SubResource("AnimationLibrary_7ss2i")
 autoplay = &"kill"
 
-[node name="yellowenemy" parent="." unique_id=1106346472 instance=ExtResource("16_ssvqc")]
+[node name="yellowenemy" parent="Enemies" unique_id=1106346472 instance=ExtResource("16_ssvqc")]
 position = Vector2(-1183, 907)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="yellowenemy" unique_id=1702248476]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/yellowenemy" unique_id=1702248476]
 libraries/ = SubResource("AnimationLibrary_xbak0")
 
-[node name="Coin80" parent="." unique_id=1355615487 instance=ExtResource("10_vtaks")]
-position = Vector2(-888, 611)
-
-[node name="Coin81" parent="." unique_id=1273090214 instance=ExtResource("10_vtaks")]
-position = Vector2(-754, 610)
-
-[node name="Coin82" parent="." unique_id=380345990 instance=ExtResource("10_vtaks")]
-position = Vector2(-642, 608)
-
-[node name="Coin83" parent="." unique_id=63085520 instance=ExtResource("10_vtaks")]
-position = Vector2(-504, 606)
-
-[node name="Coin84" parent="." unique_id=1262858327 instance=ExtResource("10_vtaks")]
-position = Vector2(-377, 603)
-
-[node name="Coin85" parent="." unique_id=914149850 instance=ExtResource("10_vtaks")]
-position = Vector2(-267, 603)
-
-[node name="yellowplatform3" parent="." unique_id=1521134619 instance=ExtResource("18_ssvqc")]
-position = Vector2(-425, 248)
-
-[node name="yellowplatform4" parent="." unique_id=2082460957 instance=ExtResource("18_ssvqc")]
-position = Vector2(-395, 248)
-
-[node name="yellowplatform5" parent="." unique_id=427621613 instance=ExtResource("18_ssvqc")]
-position = Vector2(-497, 210)
-
-[node name="yellowplatform6" parent="." unique_id=1327334820 instance=ExtResource("18_ssvqc")]
-position = Vector2(-467, 210)
-
-[node name="yellowplatform7" parent="." unique_id=553238328 instance=ExtResource("18_ssvqc")]
-position = Vector2(-1318, 162)
-
-[node name="yellowplatform8" parent="." unique_id=779645193 instance=ExtResource("18_ssvqc")]
-position = Vector2(-1288, 163)
-
-[node name="yellowplatform9" parent="." unique_id=917766144 instance=ExtResource("18_ssvqc")]
-position = Vector2(-1380, 116)
-
-[node name="yellowplatform10" parent="." unique_id=1346166128 instance=ExtResource("18_ssvqc")]
-position = Vector2(-1350, 117)
-
-[node name="Enemy5" parent="." unique_id=655610598 instance=ExtResource("12_dinhu")]
+[node name="Enemy5" parent="Enemies" unique_id=655610598 instance=ExtResource("12_dinhu")]
 position = Vector2(-1375, -206)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy5" unique_id=1582705335]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemies/Enemy5" unique_id=1582705335]
 libraries/ = SubResource("AnimationLibrary_1id2h")
 autoplay = &"kill"
+
+[node name="finish" parent="." unique_id=1630556567 instance=ExtResource("21_5newe")]
+position = Vector2(545, -769)

@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://bwcgvob6bd52u"]
+
+[ext_resource type="Script" uid="uid://cb4pk0kxd2njn" path="res://scenes/completed.gd" id="1_1qlld"]
+[ext_resource type="FontFile" uid="uid://dcadc35nx875u" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_1qlld"]
+[ext_resource type="VideoStream" uid="uid://drv6bimop24jv" path="res://assets/parallex/bg.ogv" id="3_1qlld"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqhd5"]
+bg_color = Color(0.8745098, 0.9137255, 0.54509807, 1)
+corner_radius_top_left = 26
+corner_radius_top_right = 26
+corner_radius_bottom_right = 26
+corner_radius_bottom_left = 26
+shadow_size = 10
+shadow_offset = Vector2(0, 5.51)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1qlld"]
+bg_color = Color(0.4862745, 0.5137255, 0.18039216, 1)
+corner_radius_top_left = 26
+corner_radius_top_right = 26
+corner_radius_bottom_right = 26
+corner_radius_bottom_left = 26
+shadow_size = 10
+shadow_offset = Vector2(0, 5.51)
+
+[node name="Completed" type="Control" unique_id=1514909096]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_right = 674.0
+offset_bottom = 290.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1qlld")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1359439478]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 20.0
+offset_right = 2023.0
+offset_bottom = 1101.0
+stream = ExtResource("3_1qlld")
+autoplay = true
+loop = true
+
+[node name="done" type="Label" parent="." unique_id=1958157652]
+layout_mode = 0
+offset_left = 495.0
+offset_top = 86.0
+offset_right = 1580.0
+offset_bottom = 331.0
+theme_override_colors/font_color = Color(0.9137255, 0.9137255, 0.54509807, 1)
+theme_override_fonts/font = ExtResource("2_1qlld")
+theme_override_font_sizes/font_size = 40
+text = "Congratulations!!
+
+Tung Tung Tung has been freed.
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=367348156]
+position = Vector2(1010, 505)
+zoom = Vector2(0.7, 0.7)
+
+[node name="Button" type="Button" parent="." unique_id=1169011650]
+layout_mode = 0
+offset_left = 1423.0
+offset_top = 761.0
+offset_right = 1757.0
+offset_bottom = 890.0
+theme_override_colors/font_color = Color(0.16470589, 0.2627451, 0.07450981, 1)
+theme_override_fonts/font = ExtResource("2_1qlld")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_bqhd5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bqhd5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1qlld")
+text = "Exit the game "
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
